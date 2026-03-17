@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>महंत स्वामी महाराज | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #9B6B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.4); }
+    50% { text-shadow: 0 0 20px rgba(200,155,20,0.9), 0 0 40px rgba(200,155,20,0.5); }
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-20px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.5; }
+  }
+  @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 14px; color: white; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #2E5A1A 0%, #1A3A0D 50%, #0A1F05 100%);
+    padding: 76px 20px 36px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .mandala-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; height: 280px; opacity: 0.07; pointer-events: none; }
+  .particle { position: absolute; width: 4px; height: 4px; background: #A8D8A0; border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); opacity: 0.6; }
+  .hero-icon { font-size: 44px; display: block; margin-bottom: 10px; position: relative; z-index: 1; animation: pulseGlow 3s ease-in-out infinite; }
+  .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 28px; color: #F0FFE8; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  .hero-subtitle { font-family: 'Cinzel', serif; font-size: 10px; color: #A8D8A0; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  h2 { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 22px; color: var(--crimson); margin-bottom: 12px; line-height: 1.4; }
+  p { font-size: 16px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: var(--gold-pale);
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    padding: 20px 18px;
+    margin: 16px 0;
+    text-align: center;
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .quote-icon { font-size: 26px; display: block; margin-bottom: 8px; }
+  .quote-text {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--maroon);
+    line-height: 1.9;
+    font-weight: 600;
+  }
+  .quote-attr {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: var(--text-light);
+    letter-spacing: 0.12em;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* INFO CARDS */
+  .info-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-left: 4px solid var(--saffron);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .info-card:nth-child(1) { animation-delay: 0.1s; }
+  .info-card:nth-child(2) { animation-delay: 0.2s; }
+  .info-card:nth-child(3) { animation-delay: 0.3s; }
+  .info-card:nth-child(4) { animation-delay: 0.4s; }
+  .info-card-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 15px; color: var(--crimson); margin-bottom: 4px; }
+  .info-card-text { font-size: 15px; line-height: 1.8; color: var(--text-mid); }
+
+  /* LINEAGE SECTION */
+  .lineage-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 20px;
+    color: var(--crimson);
+    margin-bottom: 16px;
+  }
+  .lineage-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin: 0 -16px;
+    padding: 0 16px 8px;
+    scrollbar-width: none;
+  }
+  .lineage-scroll::-webkit-scrollbar { display: none; }
+  .lineage-track {
+    display: flex;
+    gap: 0;
+    min-width: max-content;
+    padding: 8px 0 16px;
+    align-items: flex-start;
+  }
+
+  .lineage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+  .lineage-item:nth-child(1) { animation-delay: 0.05s; }
+  .lineage-item:nth-child(2) { animation-delay: 0.1s; }
+  .lineage-item:nth-child(3) { animation-delay: 0.15s; }
+  .lineage-item:nth-child(4) { animation-delay: 0.2s; }
+  .lineage-item:nth-child(5) { animation-delay: 0.25s; }
+  .lineage-item:nth-child(6) { animation-delay: 0.3s; }
+  .lineage-item:nth-child(7) { animation-delay: 0.35s; }
+
+  .lineage-connector {
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+  }
+  .lineage-arrow {
+    width: 32px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--saffron));
+    position: relative;
+    flex-shrink: 0;
+  }
+  .lineage-arrow::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: -4px;
+    border-left: 8px solid var(--saffron);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  .lineage-node {
+    width: 100px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .lineage-node.current .lineage-circle {
+    background: linear-gradient(135deg, var(--saffron), var(--crimson));
+    box-shadow: 0 0 0 3px var(--gold), 0 0 12px rgba(212,80,10,0.4);
+  }
+  .lineage-circle {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--maroon), var(--crimson));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin: 0 auto 8px;
+    border: 2px solid var(--gold);
+  }
+  .lineage-name {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--crimson);
+    line-height: 1.4;
+  }
+  .lineage-years {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+
+  /* VERTICAL LINEAGE (for mobile) */
+  .lineage-vertical { margin: 8px 0; }
+  .lineage-v-item {
+    display: flex;
+    gap: 0;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+  .lineage-v-item:nth-child(1) { animation-delay: 0.05s; }
+  .lineage-v-item:nth-child(2) { animation-delay: 0.1s; }
+  .lineage-v-item:nth-child(3) { animation-delay: 0.15s; }
+  .lineage-v-item:nth-child(4) { animation-delay: 0.2s; }
+  .lineage-v-item:nth-child(5) { animation-delay: 0.25s; }
+  .lineage-v-item:nth-child(6) { animation-delay: 0.3s; }
+  .lineage-v-item:nth-child(7) { animation-delay: 0.35s; }
+
+  .lineage-v-line-col {
+    display: flex; flex-direction: column; align-items: center;
+    width: 36px; flex-shrink: 0;
+  }
+  .lineage-v-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+    flex-shrink: 0; margin-top: 4px;
+  }
+  .lineage-v-item.current-guru .lineage-v-dot {
+    background: var(--saffron);
+    box-shadow: 0 0 0 3px var(--gold), 0 0 10px rgba(212,80,10,0.4);
+    width: 18px; height: 18px;
+    margin-top: 2px;
+  }
+  .lineage-v-vline {
+    width: 2px; flex: 1;
+    background: linear-gradient(to bottom, var(--gold), rgba(200,155,20,0.15));
+    min-height: 18px;
+    margin-top: 4px;
+  }
+  .lineage-v-item:last-child .lineage-v-vline { display: none; }
+
+  .lineage-v-content {
+    flex: 1;
+    padding: 3px 0 18px 12px;
+  }
+  .lineage-v-num {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; font-weight: 600;
+    color: var(--saffron);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .lineage-v-name {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--crimson);
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .lineage-v-item.current-guru .lineage-v-name {
+    color: var(--saffron);
+    font-size: 17px;
+  }
+  .lineage-v-years {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+  .lineage-v-note {
+    font-size: 13px;
+    color: var(--text-mid);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+
+  /* LINK BUTTON */
+  .link-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(90deg, var(--saffron), var(--saffron-lt));
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 16px 0;
+    min-height: 48px;
+    box-shadow: 0 4px 16px rgba(212,80,10,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .link-btn:active { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,80,10,0.5); }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px;
+    background: var(--cream-dk); border: 1.5px solid var(--gold);
+    border-radius: 8px; min-height: 44px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">महंत स्वामी महाराज</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO — deep green tones -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#A8D8A0" stroke-width="1"/>
+    <circle cx="150" cy="150" r="100" stroke="#A8D8A0" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="60" stroke="#A8D8A0" stroke-width="0.9"/>
+    <circle cx="150" cy="150" r="25" stroke="#A8D8A0" stroke-width="1"/>
+    <g stroke="#A8D8A0" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/><line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/><line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+  </svg>
+  <div class="particle" style="left:15%;top:25%;--dur:4s;--delay:0s;"></div>
+  <div class="particle" style="left:78%;top:35%;--dur:5s;--delay:0.5s;"></div>
+  <div class="particle" style="left:50%;top:72%;--dur:3.8s;--delay:1s;"></div>
+
+  <span class="hero-icon">🙏</span>
+  <div class="hero-title">महंत स्वामी महाराज</div>
+  <div class="hero-subtitle">6th Spiritual Head · BAPS · Present</div>
+</div>
+
+<div class="content">
+
+  <!-- QUOTE -->
+  <div class="quote-box" style="margin-top:20px;">
+    <span class="quote-icon">🌺</span>
+    <div class="quote-text">"भगवान और संत में श्रद्धा रखो — यही मोक्ष का मार्ग है।"</div>
+    <div class="quote-attr">— महंत स्वामी महाराज</div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- INTRO CONTENT -->
+  <h2>वर्तमान आध्यात्मिक प्रमुख</h2>
+  <p>महंत स्वामी महाराज BAPS स्वामिनारायण संस्था के <strong style="color:var(--crimson);">छठे और वर्तमान आध्यात्मिक प्रमुख</strong> हैं। वे प्रमुख स्वामी महाराज के उत्तराधिकारी हैं।</p>
+
+  <div class="info-card">
+    <div class="info-card-title">🌍 वैश्विक सेवा कार्य</div>
+    <div class="info-card-text">उनके नेतृत्व में BAPS का वैश्विक सेवा और आध्यात्मिक कार्य निरंतर जारी है। विश्वभर में लाखों भक्त उनके मार्गदर्शन में भक्ति और सेवा कर रहे हैं।</div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-title">📿 उपासना परंपरा</div>
+    <div class="info-card-text">"अक्षर-पुरुषोत्तम उपासना" की परंपरा को आगे ले जा रहे हैं — जो भगवान स्वामिनारायण ने स्थापित की और जिसे हर उत्तराधिकारी ने जीवंत रखा।</div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-title">🏛️ अक्षरधाम जोधपुर</div>
+    <div class="info-card-text">उनके आशीर्वाद और मार्गदर्शन से BAPS अक्षरधाम मंदिर, जोधपुर का मूर्ति प्रतिष्ठा महोत्सव <strong>सितंबर 2025</strong> में संपन्न हुआ।</div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-title">✨ ब्रह्म-स्वरूप</div>
+    <div class="info-card-text">BAPS की मान्यता अनुसार, महंत स्वामी महाराज ब्रह्म-स्वरूप हैं — अर्थात् वे अक्षरब्रह्म के प्रत्यक्ष प्रतिनिधि हैं और भगवान स्वामिनारायण के साथ एकत्व में हैं।</div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- SPIRITUAL LINEAGE -->
+  <div class="lineage-title">गुरु परंपरा — आध्यात्मिक उत्तराधिकार</div>
+
+  <div class="lineage-vertical">
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">प्रथम</div>
+        <div class="lineage-v-name">भगवान स्वामिनारायण</div>
+        <div class="lineage-v-years">1781 – 1830</div>
+        <div class="lineage-v-note">स्वामिनारायण संप्रदाय के संस्थापक</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">द्वितीय</div>
+        <div class="lineage-v-name">गुणातीतानंद स्वामी</div>
+        <div class="lineage-v-years">1785 – 1867</div>
+        <div class="lineage-v-note">प्रथम ब्रह्म-स्वरूप संत</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">तृतीय</div>
+        <div class="lineage-v-name">भगतजी महाराज</div>
+        <div class="lineage-v-years">1829 – 1897</div>
+        <div class="lineage-v-note">अक्षर-पुरुषोत्तम परंपरा के संवाहक</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">चतुर्थ</div>
+        <div class="lineage-v-name">शास्त्रीजी महाराज</div>
+        <div class="lineage-v-years">1865 – 1951</div>
+        <div class="lineage-v-note">BAPS संस्था की स्थापना — 1907</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">पंचम</div>
+        <div class="lineage-v-name">योगीजी महाराज</div>
+        <div class="lineage-v-years">1892 – 1971</div>
+        <div class="lineage-v-note">अंतर्राष्ट्रीय सत्संग विस्तार</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num">षष्ठम</div>
+        <div class="lineage-v-name">प्रमुख स्वामी महाराज</div>
+        <div class="lineage-v-years">1921 – 2016</div>
+        <div class="lineage-v-note">1,100+ मंदिर — अक्षरधाम दिल्ली</div>
+      </div>
+    </div>
+
+    <div class="lineage-v-item current-guru">
+      <div class="lineage-v-line-col">
+        <div class="lineage-v-dot"></div>
+        <div class="lineage-v-vline"></div>
+      </div>
+      <div class="lineage-v-content">
+        <div class="lineage-v-num" style="color:var(--gold);">सप्तम — वर्तमान</div>
+        <div class="lineage-v-name">महंत स्वामी महाराज</div>
+        <div class="lineage-v-years">2016 – वर्तमान</div>
+        <div class="lineage-v-note">छठे आध्यात्मिक उत्तराधिकारी — वैश्विक BAPS परिवार के प्रमुख</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- LINK BUTTON -->
+  <a href="https://www.baps.org" target="_blank" class="link-btn">
+    🙏 अधिक जानें → baps.org
+  </a>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>

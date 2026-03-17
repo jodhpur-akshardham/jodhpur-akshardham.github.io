@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवान स्वामिनारायण — एक परिचय | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #9B6B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.3); }
+    50% { text-shadow: 0 0 20px rgba(200,155,20,0.8), 0 0 40px rgba(200,155,20,0.4); }
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-20px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.5; }
+  }
+  @keyframes quoteCycle {
+    0%,28% { opacity: 1; transform: translateY(0); }
+    33%,66% { opacity: 0; transform: translateY(-10px); }
+    71%,100% { opacity: 0; transform: translateY(10px); }
+  }
+  @keyframes quoteCycle2 {
+    0%,28% { opacity: 0; transform: translateY(10px); }
+    33%,61% { opacity: 1; transform: translateY(0); }
+    66%,100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes quoteCycle3 {
+    0%,61% { opacity: 0; transform: translateY(10px); }
+    66%,95% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 14px; color: white; text-align: center; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #D4500A 0%, #8B1A1A 60%, #5C0A0A 100%);
+    padding: 76px 20px 36px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .mandala-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; opacity: 0.07; pointer-events: none; }
+  .particle { position: absolute; width: 4px; height: 4px; background: var(--gold-lt); border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); opacity: 0.5; }
+  .hero-om { font-size: 48px; color: var(--gold-lt); animation: pulseGlow 3s ease-in-out infinite; display: block; margin-bottom: 10px; position: relative; z-index: 1; }
+  .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 28px; color: #FFF5CC; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  .hero-subtitle { font-family: 'Cinzel', serif; font-size: 11px; color: var(--gold-lt); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; }
+
+  /* ANCHOR TABS */
+  .anchor-tabs {
+    background: var(--maroon);
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    display: flex;
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 52px;
+    z-index: 90;
+  }
+  .anchor-tabs::-webkit-scrollbar { display: none; }
+  .anchor-tab {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 13px; font-weight: 600;
+    color: rgba(255,245,204,0.7);
+    text-decoration: none;
+    padding: 12px 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    min-height: 44px;
+    display: flex; align-items: center;
+  }
+  .anchor-tab:active, .anchor-tab:hover {
+    color: var(--gold-lt);
+    border-bottom-color: var(--gold);
+  }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  .section-anchor { padding-top: 20px; }
+
+  h2 { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 22px; color: var(--crimson); margin-bottom: 12px; line-height: 1.4; }
+  h3 { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 18px; color: var(--crimson); margin-bottom: 8px; }
+  p { font-size: 16px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* FACTS CARD */
+  .facts-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+  .fact-row {
+    display: flex; gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(200,155,20,0.2);
+    align-items: flex-start;
+  }
+  .fact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .fact-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .fact-text { font-size: 15px; line-height: 1.8; color: var(--text-mid); }
+  .fact-text strong { color: var(--crimson); }
+
+  /* ROTATING QUOTES */
+  .quotes-container {
+    position: relative;
+    min-height: 100px;
+    margin: 16px 0;
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 18px 18px 20px;
+    overflow: hidden;
+  }
+  .rotating-quote {
+    position: absolute;
+    top: 18px; left: 20px; right: 18px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+  .rotating-quote:nth-child(1) { animation: quoteCycle 12s ease-in-out infinite; }
+  .rotating-quote:nth-child(2) { animation: quoteCycle2 12s ease-in-out infinite; }
+  .rotating-quote:nth-child(3) { animation: quoteCycle3 12s ease-in-out infinite; }
+  /* Static fallback height */
+  .quotes-spacer { height: 90px; }
+
+  /* REFORM LIST */
+  .reform-list { list-style: none; margin: 12px 0; }
+  .reform-list li {
+    display: flex; gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(200,155,20,0.2);
+    font-size: 16px; line-height: 1.8;
+    color: var(--text-mid);
+    animation: fadeUp 0.5s ease both;
+  }
+  .reform-list li:last-child { border-bottom: none; }
+  .reform-list li:nth-child(1) { animation-delay: 0.1s; }
+  .reform-list li:nth-child(2) { animation-delay: 0.2s; }
+  .reform-list li:nth-child(3) { animation-delay: 0.3s; }
+  .reform-list li:nth-child(4) { animation-delay: 0.4s; }
+  .reform-bullet { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .reform-text strong { color: var(--crimson); }
+
+  /* LEGACY ICON CARDS */
+  .legacy-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin: 12px 0;
+  }
+  .legacy-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .legacy-card:nth-child(1) { animation-delay: 0.1s; }
+  .legacy-card:nth-child(2) { animation-delay: 0.2s; }
+  .legacy-card:nth-child(3) { animation-delay: 0.3s; }
+  .legacy-card:nth-child(4) { animation-delay: 0.4s; }
+  .legacy-card:active { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(139,26,26,0.15); }
+  .legacy-icon { font-size: 28px; margin-bottom: 6px; display: block; }
+  .legacy-text { font-size: 14px; line-height: 1.6; color: var(--text-mid); }
+
+  /* AUDIO BUTTON */
+  .audio-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(90deg, var(--saffron), var(--saffron-lt));
+    color: white;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px; font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    min-height: 52px;
+    box-shadow: 0 4px 16px rgba(212,80,10,0.4);
+    margin: 16px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .audio-btn:active { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,80,10,0.5); }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px;
+    background: var(--cream-dk); border: 1.5px solid var(--gold);
+    border-radius: 8px; min-height: 44px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">भगवान स्वामिनारायण</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#E8BE30" stroke-width="1"/>
+    <circle cx="150" cy="150" r="110" stroke="#E8BE30" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="80" stroke="#E8BE30" stroke-width="0.9"/>
+    <circle cx="150" cy="150" r="50" stroke="#E8BE30" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="20" stroke="#E8BE30" stroke-width="1"/>
+    <g stroke="#E8BE30" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/><line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/><line x1="250" y1="50" x2="50" y2="250"/>
+      <line x1="10" y1="100" x2="290" y2="200"/><line x1="10" y1="200" x2="290" y2="100"/>
+    </g>
+  </svg>
+  <div class="particle" style="left:10%;top:20%;--dur:4s;--delay:0s;"></div>
+  <div class="particle" style="left:85%;top:30%;--dur:5s;--delay:0.5s;"></div>
+  <div class="particle" style="left:50%;top:75%;--dur:3.5s;--delay:1s;"></div>
+  <div class="particle" style="left:25%;top:65%;--dur:4.5s;--delay:0.7s;"></div>
+
+  <span class="hero-om">॥ ॐ ॥</span>
+  <div class="hero-title">भगवान स्वामिनारायण</div>
+  <div class="hero-subtitle">एक परिचय · Complete Introduction</div>
+</div>
+
+<!-- ANCHOR TABS -->
+<nav class="anchor-tabs" aria-label="Page sections">
+  <a href="#birth" class="anchor-tab">जन्म</a>
+  <a href="#founding" class="anchor-tab">संप्रदाय</a>
+  <a href="#vachanamrut" class="anchor-tab">वचनामृत</a>
+  <a href="#reform" class="anchor-tab">सेवा</a>
+  <a href="#legacy" class="anchor-tab">विरासत</a>
+</nav>
+
+<div class="content" id="main-content">
+
+  <!-- AUDIO BUTTON -->
+  <button class="audio-btn" id="audioBtn" onclick="speakHindi()">
+    🔊 हिंदी में सुनें
+  </button>
+
+  <!-- SECTION A: Birth -->
+  <div id="birth" class="section-anchor">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>दिव्य अवतरण</h2>
+    <p>भगवान स्वामिनारायण का अवतरण <strong style="color:var(--crimson);">3 अप्रैल 1781</strong> को हुआ। वे साक्षात् पुरुषोत्तम नारायण के अवतार हैं — यह उनके जीवन के हर क्षण से प्रमाणित होता है। उनका जन्म उत्तर प्रदेश के छोटे से ग्राम छपैया में हुआ — किंतु उनकी महिमा ने समस्त सृष्टि को आलोकित किया।</p>
+
+    <div class="facts-card" style="animation-delay:0.2s">
+      <div class="fact-row">
+        <span class="fact-icon">🌸</span>
+        <span class="fact-text"><strong>जन्म तिथि:</strong> 3 अप्रैल 1781, रामनवमी</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">📍</span>
+        <span class="fact-text"><strong>जन्म स्थान:</strong> छपैया ग्राम, गोंडा जिला, उत्तर प्रदेश</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">👨‍👩‍👦</span>
+        <span class="fact-text"><strong>माता-पिता:</strong> धर्मदेव (पिता) और भक्तिमाता (माता)</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">✨</span>
+        <span class="fact-text"><strong>जन्म नाम:</strong> घनश्याम पांडे</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">⭐</span>
+        <span class="fact-text"><strong>दिव्य संकेत:</strong> जन्म के समय संतों ने कहा — "यह पुण्य आत्मा संसार का उद्धार करेगी"</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION B: Founding -->
+  <div id="founding" class="section-anchor">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>सहजानंद स्वामी — संप्रदाय की स्थापना</h2>
+    <p>1799 में गुजरात आने के बाद, रामानंद स्वामी ने उन्हें दीक्षा दी और नाम दिया — <strong style="color:var(--crimson);">सहजानंद स्वामी</strong>। 1802 में वे सत्संग के प्रमुख बने और स्वामिनारायण संप्रदाय की स्थापना हुई।</p>
+
+    <div class="facts-card" style="animation-delay:0.3s">
+      <div class="fact-row">
+        <span class="fact-icon">🙏</span>
+        <span class="fact-text"><strong>1799:</strong> गुजरात आगमन — लोज गाँव में रामानंद स्वामी से मिलन</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">📿</span>
+        <span class="fact-text"><strong>दीक्षा:</strong> सहजानंद स्वामी नाम से दीक्षा प्राप्त की</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">🌟</span>
+        <span class="fact-text"><strong>1802:</strong> सत्संग के प्रमुख बने — स्वामिनारायण मंत्र की स्थापना</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">🏛️</span>
+        <span class="fact-text"><strong>जीवनकाल में 6 मंदिर:</strong> अहमदाबाद, भुज, वड़ताल, मुली, धोलेरा, जूनागढ़</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-icon">🌺</span>
+        <span class="fact-text"><strong>महासमाधि:</strong> 1 जून 1830, गढ़डा — दिव्य लोकगमन</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION C: Vachanamrut -->
+  <div id="vachanamrut" class="section-anchor">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>वचनामृत — दिव्य वचन</h2>
+    <p>उनके <strong style="color:var(--crimson);">262 आध्यात्मिक प्रवचनों</strong> का संकलन है — वचनामृत। यह ग्रंथ जीव, माया, ईश्वर, ब्रह्म और परब्रह्म के तत्त्व को सरल भाषा में समझाता है। यह भक्ति और मोक्ष का मार्गदर्शक ग्रंथ है।</p>
+
+    <!-- ROTATING QUOTES -->
+    <div class="quotes-container">
+      <div class="rotating-quote">"जो भगवान की शरण लेता है, उसे किसी का भय नहीं।"</div>
+      <div class="rotating-quote">"सेवा में जो सुख है, वह राज्य में भी नहीं।"</div>
+      <div class="rotating-quote">"मन को वश में करना — यही सबसे बड़ी तपस्या है।"</div>
+      <div class="quotes-spacer"></div>
+    </div>
+  </div>
+
+  <!-- SECTION D: Reform -->
+  <div id="reform" class="section-anchor">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>सेवा और समाज सुधार</h2>
+    <p>वे केवल आध्यात्मिक गुरु नहीं थे — वे एक <strong style="color:var(--crimson);">सामाजिक क्रांति</strong> थे। जहाँ वे गए, वहाँ समाज बदला, जीवन बदला।</p>
+
+    <ul class="reform-list">
+      <li>
+        <span class="reform-bullet">🌾</span>
+        <span class="reform-text"><strong>1813 सौराष्ट्र अकाल</strong> में विशाल राहत अभियान चलाया — हज़ारों लोगों को भोजन और आश्रय दिया</span>
+      </li>
+      <li>
+        <span class="reform-bullet">👩</span>
+        <span class="reform-text"><strong>महिलाओं के लिए</strong> अलग सत्संग सभा स्थापित की — भारत में पहली बार इतने बड़े पैमाने पर</span>
+      </li>
+      <li>
+        <span class="reform-bullet">🚫</span>
+        <span class="reform-text"><strong>पशु बलि, सती प्रथा और नशे</strong> पर कड़ा प्रतिबंध लगाया — समाज को कुरीतियों से मुक्त किया</span>
+      </li>
+      <li>
+        <span class="reform-bullet">🤝</span>
+        <span class="reform-text"><strong>सभी जाति और वर्ग</strong> के लोगों को सत्संग में समान स्थान दिया — भेदभाव का अंत किया</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION E: Legacy -->
+  <div id="legacy" class="section-anchor">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>विरासत — Legacy</h2>
+    <p>उनकी विरासत केवल इतिहास नहीं — वह आज भी जीवंत है, विश्व के कोने-कोने में।</p>
+
+    <div class="legacy-grid">
+      <div class="legacy-card">
+        <span class="legacy-icon">🏛️</span>
+        <div class="legacy-text">उनके जीवनकाल में <strong style="color:var(--crimson);">6 मंदिर</strong> निर्मित</div>
+      </div>
+      <div class="legacy-card">
+        <span class="legacy-icon">🌍</span>
+        <div class="legacy-text">आज <strong style="color:var(--crimson);">1,100+ BAPS मंदिर</strong> — 55+ देशों में</div>
+      </div>
+      <div class="legacy-card">
+        <span class="legacy-icon">🏆</span>
+        <div class="legacy-text">अक्षरधाम दिल्ली — <strong style="color:var(--crimson);">गिनीज़ वर्ल्ड रिकॉर्ड</strong></div>
+      </div>
+      <div class="legacy-card">
+        <span class="legacy-icon">🇮🇳</span>
+        <div class="legacy-text">अक्षरधाम जोधपुर — <strong style="color:var(--crimson);">सितंबर 2025</strong> मूर्ति प्रतिष्ठा</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+</div><!-- end content -->
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+<script>
+function speakHindi() {
+  const btn = document.getElementById('audioBtn');
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    btn.textContent = '🔊 हिंदी में सुनें';
+    return;
+  }
+  const text = document.getElementById('main-content').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'hi-IN';
+  utter.rate = 0.85;
+  utter.pitch = 1;
+  utter.onend = () => { btn.textContent = '🔊 हिंदी में सुनें'; };
+  btn.textContent = '⏹ रोकें';
+  window.speechSynthesis.speak(utter);
+}
+</script>
+
+</body>
+</html>

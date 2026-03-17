@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नीलकंठ चरित्र | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #9B6B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.3); }
+    50% { text-shadow: 0 0 20px rgba(200,155,20,0.8), 0 0 40px rgba(200,155,20,0.4); }
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-22px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.5; }
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 15px; color: white; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #1A4A8B 0%, #0D2557 60%, #080D2E 100%);
+    padding: 76px 20px 36px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .mandala-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; height: 280px; opacity: 0.07; pointer-events: none; }
+  .particle { position: absolute; width: 3px; height: 3px; background: #A0C8FF; border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); opacity: 0.6; }
+  .hero-icon { font-size: 44px; display: block; margin-bottom: 10px; position: relative; z-index: 1; animation: pulseGlow 3s ease-in-out infinite; }
+  .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 30px; color: #E8F4FF; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+  .hero-subtitle { font-family: 'Noto Serif Devanagari', serif; font-size: 15px; color: #A0C8FF; margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; line-height: 1.6; }
+  .hero-divider { display: flex; align-items: center; gap: 10px; margin: 16px auto 0; max-width: 240px; position: relative; z-index: 1; }
+  .hero-divider::before, .hero-divider::after { content: ''; flex: 1; height: 1px; background: rgba(160,200,255,0.4); }
+  .hero-divider span { color: #A0C8FF; font-size: 16px; }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  h2 { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 22px; color: var(--crimson); margin-bottom: 12px; line-height: 1.4; }
+  p { font-size: 16px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* INTRO BOX */
+  .intro-box {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 18px 16px;
+    margin: 16px 0;
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .intro-box p { margin-bottom: 0; }
+
+  /* PILGRIMAGE STATS 2x2 */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .stat-card {
+    background: linear-gradient(135deg, #5C0A0A, #8B1A1A);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+  }
+  .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  .stat-card:nth-child(2) { animation-delay: 0.2s; }
+  .stat-card:nth-child(3) { animation-delay: 0.3s; }
+  .stat-card:nth-child(4) { animation-delay: 0.4s; }
+  .stat-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+  .stat-number { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: var(--gold-lt); display: block; margin-bottom: 2px; }
+  .stat-label { font-family: 'Noto Serif Devanagari', serif; font-size: 12px; color: rgba(255,245,204,0.8); line-height: 1.4; }
+
+  /* ROUTE TIMELINE */
+  .route-timeline { margin: 8px 0; }
+  .route-item {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+  .route-item:nth-child(1) { animation-delay: 0.05s; }
+  .route-item:nth-child(2) { animation-delay: 0.1s; }
+  .route-item:nth-child(3) { animation-delay: 0.15s; }
+  .route-item:nth-child(4) { animation-delay: 0.2s; }
+  .route-item:nth-child(5) { animation-delay: 0.25s; }
+
+  .route-timeline-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32px;
+    flex-shrink: 0;
+  }
+  .route-dot {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .route-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--gold), rgba(200,155,20,0.2));
+    min-height: 20px;
+    margin-top: 4px;
+  }
+  .route-item:last-child .route-line { display: none; }
+
+  .route-content {
+    flex: 1;
+    padding: 4px 0 18px 12px;
+  }
+  .route-date {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; font-weight: 600;
+    color: var(--saffron);
+    letter-spacing: 0.1em;
+    margin-bottom: 3px;
+  }
+  .route-desc {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 15px; line-height: 1.8;
+    color: var(--text-mid);
+  }
+  .route-desc strong { color: var(--crimson); }
+
+  /* DID YOU KNOW CARD */
+  .dyk-card {
+    background: linear-gradient(135deg, #0D2557, #1A4A8B);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 16px 0;
+    color: white;
+    animation: fadeUp 0.5s ease 0.3s both;
+  }
+  .dyk-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #A0C8FF;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .dyk-text {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px; line-height: 1.9;
+    color: rgba(232,244,255,0.92);
+  }
+
+  /* VIDEO SECTION */
+  .video-label-num {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; font-weight: 600;
+    color: var(--saffron);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 4px; display: block;
+  }
+  .video-label {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 14px; font-weight: 600;
+    color: var(--crimson);
+    margin-bottom: 8px; padding: 0 2px;
+  }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%;
+    height: 0; overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(92,10,10,0.2);
+    margin-bottom: 16px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 18px;
+    margin: 16px 0;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.9;
+    animation: fadeUp 0.5s ease 0.4s both;
+  }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px;
+    background: var(--cream-dk); border: 1.5px solid var(--gold);
+    border-radius: 8px; min-height: 44px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">नीलकंठ चरित्र</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO — blue tones for the Himalayan journey -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#A0C8FF" stroke-width="1"/>
+    <circle cx="150" cy="150" r="100" stroke="#A0C8FF" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="60" stroke="#A0C8FF" stroke-width="0.9"/>
+    <g stroke="#A0C8FF" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/><line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/><line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+  </svg>
+  <div class="particle" style="left:12%;top:20%;--dur:4s;--delay:0s;"></div>
+  <div class="particle" style="left:75%;top:35%;--dur:5s;--delay:0.6s;"></div>
+  <div class="particle" style="left:55%;top:72%;--dur:3.8s;--delay:1s;"></div>
+  <div class="particle" style="left:30%;top:65%;--dur:4.5s;--delay:0.4s;"></div>
+
+  <span class="hero-icon">🚶</span>
+  <div class="hero-title">नीलकंठ चरित्र</div>
+  <div class="hero-subtitle">भगवान स्वामिनारायण की किशोर अवस्था — महातीर्थयात्रा</div>
+  <div class="hero-divider"><span>✦</span></div>
+</div>
+
+<div class="content">
+
+  <!-- INTRODUCTION -->
+  <div style="padding-top:20px;">
+    <div class="intro-box">
+      <p>सन् 1792 में, मात्र <strong style="color:var(--crimson);">11 वर्ष की आयु</strong> में, घनश्याम ने घर छोड़ दिया। अकेले, नंगे पैर, बिना किसी सहारे के — वे निकल पड़े एक ऐसी यात्रा पर जो <strong style="color:var(--crimson);">7 वर्षों तक चली</strong> और लगभग <strong style="color:var(--crimson);">12,000 किलोमीटर</strong> की थी।</p>
+      <p style="margin-bottom:0;">इस यात्रा के दौरान उनका नाम था — <strong style="color:var(--crimson);">नीलकंठ वर्णी।</strong></p>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- STATS 2x2 -->
+  <h2>यात्रा के आँकड़े</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-icon">🗓️</span>
+      <span class="stat-number">7 वर्ष</span>
+      <span class="stat-label">यात्रा की अवधि</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🚶</span>
+      <span class="stat-number">12,000 किमी</span>
+      <span class="stat-label">पैदल तय की दूरी</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🗺️</span>
+      <span class="stat-number">संपूर्ण भारत</span>
+      <span class="stat-label">यात्रा का क्षेत्र</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🙏</span>
+      <span class="stat-number">1799</span>
+      <span class="stat-label">गुजरात आगमन का वर्ष</span>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- ROUTE TIMELINE -->
+  <h2>यात्रा मार्ग — टाइमलाइन</h2>
+
+  <div class="route-timeline">
+
+    <div class="route-item">
+      <div class="route-timeline-line">
+        <div class="route-dot"></div>
+        <div class="route-line"></div>
+      </div>
+      <div class="route-content">
+        <div class="route-date">29 जून 1792</div>
+        <div class="route-desc"><strong>छपैया से प्रस्थान</strong> — 11 वर्ष की आयु में, रात के अँधेरे में, बिना किसी को बताए घर छोड़ा</div>
+      </div>
+    </div>
+
+    <div class="route-item">
+      <div class="route-timeline-line">
+        <div class="route-dot"></div>
+        <div class="route-line"></div>
+      </div>
+      <div class="route-content">
+        <div class="route-date">1792–1795</div>
+        <div class="route-desc"><strong>हिमालय, बद्रीनाथ</strong> — कड़ाके की ठंड में हिम-शिखरों पर तपस्या और गहन साधना</div>
+      </div>
+    </div>
+
+    <div class="route-item">
+      <div class="route-timeline-line">
+        <div class="route-dot"></div>
+        <div class="route-line"></div>
+      </div>
+      <div class="route-content">
+        <div class="route-date">1796</div>
+        <div class="route-desc"><strong>जगन्नाथ पुरी</strong> — पूर्वी भारत की यात्रा, समुद्रतट पर तपस्या</div>
+      </div>
+    </div>
+
+    <div class="route-item">
+      <div class="route-timeline-line">
+        <div class="route-dot"></div>
+        <div class="route-line"></div>
+      </div>
+      <div class="route-content">
+        <div class="route-date">1797</div>
+        <div class="route-desc"><strong>दक्षिण भारत</strong> — रामेश्वरम, कांचीपुरम, और दक्षिणी तीर्थ स्थानों की परिक्रमा</div>
+      </div>
+    </div>
+
+    <div class="route-item">
+      <div class="route-timeline-line">
+        <div class="route-dot"></div>
+        <div class="route-line"></div>
+      </div>
+      <div class="route-content">
+        <div class="route-date">1799</div>
+        <div class="route-desc"><strong>गुजरात आगमन</strong> — लोज गाँव में पहुँचे, रामानंद स्वामी के आश्रम में</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- DID YOU KNOW -->
+  <div class="dyk-card">
+    <div class="dyk-label">✦ क्या आप जानते हैं?</div>
+    <div class="dyk-text">नीलकंठ वर्णी हिमालय की कड़ाके की ठंड में नंगे पैर चले। वनों में उपवास किए। हिम-नदियों में स्नान किया। फिर भी जो भी उनसे मिला, उसने उनके मुख पर केवल <em>शांति और दिव्य मुस्कान</em> देखी।</div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- VIDEOS -->
+  <h2>नीलकंठ चरित्र — एनिमेटेड वीडियो</h2>
+  <p>भगवान स्वामिनारायण की किशोर तीर्थयात्रा पर आधारित एनिमेटेड श्रृंखला:</p>
+
+  <span class="video-label-num">भाग ४</span>
+  <div class="video-label">नीलकंठ की तपस्या</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=PLKZBWLL2HNB2T3toacVkIJyIkKk-Vgabe&index=3&rel=0&modestbranding=1"
+      frameborder="0" allowfullscreen loading="lazy"
+      title="नीलकंठ चरित्र भाग ४"></iframe>
+  </div>
+
+  <span class="video-label-num">भाग ५</span>
+  <div class="video-label">तीर्थयात्रा</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=PLKZBWLL2HNB2T3toacVkIJyIkKk-Vgabe&index=4&rel=0&modestbranding=1"
+      frameborder="0" allowfullscreen loading="lazy"
+      title="नीलकंठ चरित्र भाग ५"></iframe>
+  </div>
+
+  <span class="video-label-num">भाग ६</span>
+  <div class="video-label">गुजरात आगमन</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=PLKZBWLL2HNB2T3toacVkIJyIkKk-Vgabe&index=5&rel=0&modestbranding=1"
+      frameborder="0" allowfullscreen loading="lazy"
+      title="नीलकंठ चरित्र भाग ६"></iframe>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- QUOTE -->
+  <div class="quote-box">
+    "जो मार्ग उन्होंने नंगे पैर चलकर दिखाया — वह मार्ग आज करोड़ों भक्तों के जीवन का आधार है।"
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>

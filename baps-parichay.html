@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAPS संस्था परिचय | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #9B6B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.3); }
+    50% { text-shadow: 0 0 18px rgba(200,155,20,0.7), 0 0 35px rgba(200,155,20,0.4); }
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 15px; color: white;
+    letter-spacing: 0.02em;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #D4500A 0%, #8B1A1A 60%, #5C0A0A 100%);
+    padding: 76px 20px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .mandala-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px; height: 280px;
+    opacity: 0.07; pointer-events: none;
+  }
+  .hero-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 28px;
+    color: #FFF5CC; line-height: 1.3;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease 0.1s both;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; color: var(--gold-lt);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-top: 8px; position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-om {
+    font-size: 36px; color: var(--gold-lt);
+    animation: pulseGlow 3s ease-in-out infinite;
+    display: block; margin-bottom: 10px;
+    position: relative; z-index: 1;
+  }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+
+  .section-block { padding: 20px 0; animation: fadeUp 0.6s ease both; }
+  .section-block:nth-child(1) { animation-delay: 0.1s; }
+  .section-block:nth-child(2) { animation-delay: 0.2s; }
+  .section-block:nth-child(3) { animation-delay: 0.3s; }
+  .section-block:nth-child(4) { animation-delay: 0.4s; }
+
+  h2 {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 22px;
+    color: var(--crimson); margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  h3 {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 18px;
+    color: var(--crimson); margin-bottom: 8px;
+  }
+  p {
+    font-size: 16px; line-height: 1.9;
+    color: var(--text-mid); margin-bottom: 12px;
+  }
+
+  /* GOLD DIVIDER */
+  .gold-divider {
+    display: flex; align-items: center; gap: 10px;
+    margin: 16px 0;
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: ''; flex: 1; height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  /* STAT CARDS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .stat-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+  }
+  .stat-card:nth-child(1) { animation-delay: 0.2s; }
+  .stat-card:nth-child(2) { animation-delay: 0.3s; }
+  .stat-card:nth-child(3) { animation-delay: 0.4s; }
+  .stat-card:nth-child(4) { animation-delay: 0.5s; }
+
+  .stat-number {
+    font-family: 'Cinzel', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--saffron);
+    display: block; margin-bottom: 4px;
+  }
+  .stat-label {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 13px; color: var(--text-mid);
+    line-height: 1.4;
+  }
+
+  /* INFO CARDS */
+  .info-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-left: 4px solid var(--saffron);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .info-card-icon { font-size: 20px; margin-bottom: 6px; display: block; }
+  .info-card-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 15px;
+    color: var(--crimson); margin-bottom: 4px;
+  }
+  .info-card-text {
+    font-size: 15px; line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  /* HIGHLIGHT CARD — Jodhpur Mandir */
+  .highlight-card {
+    background: linear-gradient(135deg, #5C0A0A, #8B1A1A);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 16px 0;
+    color: white;
+    animation: fadeUp 0.5s ease 0.3s both;
+  }
+  .highlight-card h3 {
+    color: var(--gold-lt);
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+  .highlight-item {
+    display: flex; gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .highlight-item-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .highlight-item-text { font-size: 15px; line-height: 1.7; color: rgba(255,245,204,0.9); }
+  .highlight-item-text strong { color: var(--gold-lt); }
+
+  /* BUTTON */
+  .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--saffron), var(--saffron-lt));
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 8px;
+    margin-top: 8px;
+    display: block;
+    text-align: center;
+    min-height: 48px;
+    line-height: 22px;
+    box-shadow: 0 3px 12px rgba(212,80,10,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn:active { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(212,80,10,0.5); }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream);
+    border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center;
+    z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 15px; font-weight: 600;
+    color: var(--crimson);
+    text-decoration: none;
+    padding: 10px 28px;
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    min-height: 44px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">BAPS संस्था परिचय</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#E8BE30" stroke-width="1"/>
+    <circle cx="150" cy="150" r="100" stroke="#E8BE30" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="60" stroke="#E8BE30" stroke-width="0.9"/>
+    <g stroke="#E8BE30" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/><line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/><line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+  </svg>
+  <span class="hero-om">🏛️</span>
+  <div class="hero-title">BAPS संस्था परिचय</div>
+  <div class="hero-subtitle">BAPS Swaminarayan Sanstha · Est. 1907</div>
+</div>
+
+<div class="content">
+
+  <!-- SECTION 1: What is BAPS -->
+  <div class="section-block">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2>BAPS स्वामिनारायण संस्था क्या है?</h2>
+    <p>BAPS स्वामिनारायण संस्था एक विश्वव्यापी आध्यात्मिक और मानवीय सेवा संगठन है। इसकी आध्यात्मिक नींव भगवान स्वामिनारायण (1781–1830) ने रखी थी, जो साक्षात् परब्रह्म पुरुषोत्तम नारायण के अवतार माने जाते हैं।</p>
+    <p>सन् 1907 में शास्त्रीजी महाराज ने BAPS (Bochasanwasi Akshar Purushottam Sanstha) की औपचारिक स्थापना की — इस विचार पर कि भगवान स्वामिनारायण की सच्ची उपासना "अक्षर-पुरुषोत्तम" सिद्धांत पर आधारित होनी चाहिए।</p>
+    <p>आज BAPS का मार्गदर्शन महंत स्वामी महाराज करते हैं — जो छठे आध्यात्मिक उत्तराधिकारी हैं।</p>
+  </div>
+
+  <!-- STATS GRID -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number">1,100+</span>
+      <span class="stat-label">मंदिर — विश्वभर में</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">55+</span>
+      <span class="stat-label">देशों में उपस्थिति</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">1907</span>
+      <span class="stat-label">BAPS की स्थापना</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">करोड़ों</span>
+      <span class="stat-label">भक्त व अनुयायी</span>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- SECTION 2: History Timeline -->
+  <div class="section-block">
+    <h2>संस्था का इतिहास</h2>
+
+    <div class="info-card">
+      <span class="info-card-icon">🌸</span>
+      <div class="info-card-title">भगवान स्वामिनारायण (1781–1830)</div>
+      <div class="info-card-text">स्वामिनारायण संप्रदाय की नींव रखी। सौराष्ट्र में 6 मंदिर बनवाए। वचनामृत और शिक्षापत्री जैसे पवित्र ग्रंथों की रचना की।</div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-card-icon">📜</span>
+      <div class="info-card-title">शास्त्रीजी महाराज — BAPS स्थापना (1907)</div>
+      <div class="info-card-text">अक्षर-पुरुषोत्तम उपासना सिद्धांत को स्थापित करते हुए BAPS संस्था की औपचारिक नींव रखी।</div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-card-icon">🙏</span>
+      <div class="info-card-title">योगीजी महाराज</div>
+      <div class="info-card-text">संस्था को अंतर्राष्ट्रीय पहचान दिलाई। भक्ति और सेवा की नई ऊंचाइयां स्थापित कीं।</div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-card-icon">🏛️</span>
+      <div class="info-card-title">प्रमुख स्वामी महाराज (1921–2016)</div>
+      <div class="info-card-text">1,100+ मंदिरों का निर्माण किया। अक्षरधाम दिल्ली — विश्व का सबसे बड़ा हिंदू मंदिर परिसर (गिनीज़ रिकॉर्ड) निर्मित कराया।</div>
+    </div>
+
+    <div class="info-card">
+      <span class="info-card-icon">🌍</span>
+      <div class="info-card-title">महंत स्वामी महाराज (वर्तमान)</div>
+      <div class="info-card-text">वैश्विक सेवा कार्यों को नई दिशा दे रहे हैं। अक्षर-पुरुषोत्तम उपासना की परंपरा को आगे बढ़ा रहे हैं।</div>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- SECTION 3: Humanitarian Work -->
+  <div class="section-block">
+    <h2>मानव सेवा कार्य</h2>
+    <p>BAPS केवल एक धार्मिक संस्था नहीं — यह एक सेवा-भावी आंदोलन है। दुनिया भर में लाखों लोगों की ज़िंदगी बेहतर बनाने में BAPS का महत्वपूर्ण योगदान है।</p>
+
+    <div class="info-card" style="animation-delay:0.1s">
+      <span class="info-card-icon">🩸</span>
+      <div class="info-card-title">रक्तदान शिविर</div>
+      <div class="info-card-text">हर वर्ष हज़ारों रक्तदान शिविर आयोजित — लाखों यूनिट रक्त संग्रह।</div>
+    </div>
+
+    <div class="info-card" style="animation-delay:0.2s">
+      <span class="info-card-icon">🏥</span>
+      <div class="info-card-title">आपदा राहत</div>
+      <div class="info-card-text">भुज भूकंप (2001), केदारनाथ (2013), COVID-19 — हर आपदा में BAPS की तत्काल राहत सेवा।</div>
+    </div>
+
+    <div class="info-card" style="animation-delay:0.3s">
+      <span class="info-card-icon">🌱</span>
+      <div class="info-card-title">पर्यावरण सेवा</div>
+      <div class="info-card-text">लाखों वृक्षारोपण, जल संरक्षण अभियान, और स्वच्छता सेवा।</div>
+    </div>
+
+    <div class="info-card" style="animation-delay:0.4s">
+      <span class="info-card-icon">📚</span>
+      <div class="info-card-title">शिक्षा और संस्कार</div>
+      <div class="info-card-text">बाल संस्कार केंद्र, युवा सभाएं, और नशामुक्ति अभियान — समाज को नई दिशा दे रहे हैं।</div>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- SECTION 4: Jodhpur Mandir -->
+  <div class="section-block">
+    <div class="highlight-card">
+      <h3>🏛️ BAPS अक्षरधाम मंदिर, जोधपुर</h3>
+
+      <div class="highlight-item">
+        <span class="highlight-item-icon">🌸</span>
+        <span class="highlight-item-text"><strong>मूर्ति प्रतिष्ठा महोत्सव:</strong> सितंबर 2025 — एक ऐतिहासिक अवसर</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-item-icon">📍</span>
+        <span class="highlight-item-text"><strong>पता:</strong> Mangalnath Road, Kali Beri, Sursagar, Jodhpur, Rajasthan 342024</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-item-icon">🎟️</span>
+        <span class="highlight-item-text"><strong>प्रवेश:</strong> निःशुल्क — सभी के लिए खुला</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-item-icon">👟</span>
+        <span class="highlight-item-text">जूते मंदिर परिसर में वर्जित हैं — प्रवेश द्वार पर जूता-घर उपलब्ध है।</span>
+      </div>
+
+      <a href="https://www.baps.org" target="_blank" class="btn" style="margin-top:16px;">अधिक जानें → baps.org/jodhpur</a>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    "In this Satsang, you will find peace, strength, and joy. This is the greatest treasure of life."<br>
+    — Pramukh Swami Maharaj
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>

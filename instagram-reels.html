@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Reels | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #9B6B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.3); }
+    50% { text-shadow: 0 0 18px rgba(200,155,20,0.7), 0 0 35px rgba(200,155,20,0.4); }
+  }
+  @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 15px; color: white; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #D4500A 0%, #8B1A1A 60%, #5C0A0A 100%);
+    padding: 76px 20px 32px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 28px; color: #FFF5CC; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  .hero-subtitle { font-size: 15px; color: var(--gold-lt); margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; line-height: 1.6; }
+  .hero-icon { font-size: 40px; display: block; margin-bottom: 10px; position: relative; z-index: 1; animation: pulseGlow 3s ease-in-out infinite; }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  .section-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 22px; color: var(--crimson); margin: 20px 0 8px; }
+  .section-subtitle { font-family: 'Cinzel', serif; font-size: 10px; color: var(--text-light); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+
+  p { font-size: 16px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* INSTRUCTION CARD */
+  .instruction-card {
+    background: var(--gold-pale);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+
+  /* REELS GRID */
+  .reels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  /* REEL CARD — vertical 9:16 style placeholder */
+  .reel-card {
+    background: var(--cream-dk);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+    box-shadow: 0 3px 12px rgba(139,26,26,0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reel-card:nth-child(1) { animation-delay: 0.1s; }
+  .reel-card:nth-child(2) { animation-delay: 0.2s; }
+  .reel-card:nth-child(3) { animation-delay: 0.3s; }
+  .reel-card:nth-child(4) { animation-delay: 0.4s; }
+  .reel-card:nth-child(5) { animation-delay: 0.5s; }
+  .reel-card:nth-child(6) { animation-delay: 0.6s; }
+  .reel-card:active { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139,26,26,0.2); }
+
+  /* Aspect ratio 9:16 */
+  .reel-aspect {
+    position: relative;
+    padding-bottom: 177.78%;
+    background: linear-gradient(160deg, #5C0A0A, #8B1A1A, #D4500A);
+  }
+  .reel-aspect-inner {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+  }
+  .reel-placeholder-icon { font-size: 32px; margin-bottom: 8px; }
+  .reel-placeholder-text {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 12px;
+    color: rgba(255,245,204,0.7);
+    line-height: 1.5;
+  }
+  .reel-label {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px;
+  }
+  .reel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(90deg, var(--saffron), var(--saffron-lt));
+    color: white;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    justify-content: center;
+    min-height: 36px;
+  }
+
+  .ig-icon { font-size: 16px; }
+
+  /* NOTE CARD */
+  .note-card {
+    background: linear-gradient(135deg, var(--gold-pale), #FFF0AA);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 18px 16px;
+    margin: 20px 0;
+    animation: fadeUp 0.5s ease 0.5s both;
+  }
+  .note-card-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 15px;
+    color: var(--crimson);
+    margin-bottom: 12px;
+  }
+  .account-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(200,155,20,0.3);
+  }
+  .account-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .account-handle {
+    font-family: 'Cinzel', serif;
+    font-size: 13px; font-weight: 600;
+    color: var(--saffron);
+    letter-spacing: 0.05em;
+  }
+  .account-label {
+    font-size: 13px;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+  .ig-badge {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* FOLLOW BUTTON */
+  .follow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 13px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 10px 0;
+    min-height: 48px;
+    box-shadow: 0 3px 12px rgba(220,39,67,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .follow-btn:active { transform: translateY(-2px); }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px;
+    background: var(--cream-dk); border: 1.5px solid var(--gold);
+    border-radius: 8px; min-height: 44px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">Instagram Reels</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-icon">📱</span>
+  <div class="hero-title">स्वामिनारायण Reels</div>
+  <div class="hero-subtitle">भक्ति, ज्ञान और प्रेरणा के वीडियो</div>
+</div>
+
+<div class="content">
+
+  <div style="padding-top:16px;">
+    <div class="instruction-card">
+      📌 नीचे दिए गए Reels देखें — या BAPS Instagram पर follow करें
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <div class="section-title">Featured Reels</div>
+  <div class="section-subtitle">भक्ति और प्रेरणा · Bhakti & Inspiration</div>
+
+  <!-- DEVELOPER NOTE: Replace the placeholder reel cards with actual Instagram
+  embed codes. Get embed code from Instagram: open any reel → three dots → Embed.
+  Paste the <blockquote> embed code inside each .reel-card div.
+  Also load Instagram embed script: <script async src="//www.instagram.com/embed.js"></script> -->
+
+  <div class="reels-grid">
+
+    <!-- Reel 1 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">🌸</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_swaminarayan_sanstha/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel 2 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">🙏</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_swaminarayan_sanstha/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel 3 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">✨</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_swaminarayan_sanstha/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel 4 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">🏛️</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_mandir/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel 5 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">🌺</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_mandir/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel 6 -->
+    <div class="reel-card">
+      <div class="reel-aspect">
+        <div class="reel-aspect-inner">
+          <div class="reel-placeholder-icon">📖</div>
+          <div class="reel-placeholder-text">Reel यहाँ<br>लोड होगा</div>
+          <div class="reel-label">
+            <a href="https://www.instagram.com/baps_mandir/" target="_blank" class="reel-btn">
+              <span class="ig-icon">📸</span> Reel देखें
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end reels-grid -->
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- NOTE CARD -->
+  <div class="note-card">
+    <div class="note-card-title">📌 BAPS के official Instagram accounts follow करें:</div>
+
+    <div class="account-item">
+      <div class="ig-badge">📸</div>
+      <div>
+        <div class="account-handle">@baps_swaminarayan_sanstha</div>
+        <div class="account-label">BAPS Swaminarayan Sanstha</div>
+      </div>
+    </div>
+
+    <div class="account-item">
+      <div class="ig-badge">📸</div>
+      <div>
+        <div class="account-handle">@baps_mandir</div>
+        <div class="account-label">BAPS Mandir</div>
+      </div>
+    </div>
+
+    <a href="https://www.instagram.com/baps_swaminarayan_sanstha/" target="_blank" class="follow-btn">
+      📸 Instagram पर Follow करें
+    </a>
+  </div>
+
+</div><!-- end content -->
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>
