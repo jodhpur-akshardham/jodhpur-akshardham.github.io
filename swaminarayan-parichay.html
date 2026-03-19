@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7VS23NEFRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7VS23NEFRR');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>भगवान स्वामिनारायण — एक परिचय | BAPS अक्षरधाम, जोधपुर</title>
@@ -20,7 +29,7 @@
     --cream-dk:   #F5E9C8;
     --text-dark:  #2A1506;
     --text-mid:   #5C3010;
-    --text-light: #9B6B3C;
+    --text-light: #7A4F25;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -80,9 +89,9 @@
   }
   .mandala-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; opacity: 0.07; pointer-events: none; }
   .particle { position: absolute; width: 4px; height: 4px; background: var(--gold-lt); border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); opacity: 0.5; }
-  .hero-om { font-size: 48px; color: var(--gold-lt); animation: pulseGlow 3s ease-in-out infinite; display: block; margin-bottom: 10px; position: relative; z-index: 1; }
+  .hero-om { font-size: 48px; color: var(--gold-lt); animation: pulseGlow 3s ease-in-out infinite; display: block; margin: 0 auto 10px; position: relative; z-index: 1; }
   .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 28px; color: #FFF5CC; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-  .hero-subtitle { font-family: 'Cinzel', serif; font-size: 11px; color: var(--gold-lt); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-subtitle { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold-lt); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.6s ease 0.2s both; }
 
   /* ANCHOR TABS */
   .anchor-tabs {
@@ -192,6 +201,24 @@
   .reform-bullet { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
   .reform-text strong { color: var(--crimson); }
 
+  /* JOURNEY LINK CARDS */
+  .journey-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .journey-card {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 16px 12px;
+    background: linear-gradient(135deg, var(--maroon), var(--crimson));
+    border: 1.5px solid var(--gold);
+    border-radius: 12px; text-decoration: none;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s;
+  }
+  .journey-card:active { transform: translateY(-3px); }
+  .journey-card img { width: 52px; height: 52px; object-fit: contain; border-radius: 8px; }
+  .journey-card-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 13px; color: var(--gold-lt); line-height: 1.4; }
+  .journey-card-sub { font-family: 'Cinzel', serif; font-size: 12px; color: rgba(255,245,204,0.6); letter-spacing: 0.1em; }
+  .journey-card-arrow { font-size: 12px; color: var(--gold-lt); }
+
   /* LEGACY ICON CARDS */
   .legacy-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -213,6 +240,62 @@
   .legacy-card:active { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(139,26,26,0.15); }
   .legacy-icon { font-size: 28px; margin-bottom: 6px; display: block; }
   .legacy-text { font-size: 14px; line-height: 1.6; color: var(--text-mid); }
+
+  /* APP CARD */
+  .app-card {
+    background: linear-gradient(135deg, #1A0A2E, #2D1B4E, #1A0A2E);
+    border: 1.5px solid var(--gold);
+    border-radius: 16px;
+    padding: 20px 16px;
+    margin: 16px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+  .app-card-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 14px;
+  }
+  .app-card-icon {
+    width: 56px; height: 56px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--saffron), var(--crimson));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 14px rgba(212,80,10,0.4);
+  }
+  .app-card-info { flex: 1; }
+  .app-card-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 16px;
+    color: var(--gold-lt); margin-bottom: 3px;
+  }
+  .app-card-sub {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: rgba(255,245,204,0.85); letter-spacing: 0.1em;
+  }
+  .app-card-desc {
+    font-size: 13px; color: rgba(255,245,204,0.75);
+    line-height: 1.7; margin-bottom: 14px;
+  }
+  .app-btn-row { display: flex; gap: 10px; }
+  .app-btn {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 10px; border-radius: 10px;
+    text-decoration: none; font-family: 'Cinzel', serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+    transition: transform 0.2s; min-height: 44px;
+  }
+  .app-btn:active { transform: scale(0.97); }
+  .app-btn-android {
+    background: linear-gradient(135deg, #01875f, #00694a);
+    color: white;
+    box-shadow: 0 3px 10px rgba(1,135,95,0.4);
+  }
+  .app-btn-ios {
+    background: linear-gradient(135deg, #0071e3, #0058b0);
+    color: white;
+    box-shadow: 0 3px 10px rgba(0,113,227,0.4);
+  }
+  .app-btn-icon { font-size: 18px; }
 
   /* AUDIO BUTTON */
   .audio-btn {
@@ -287,11 +370,10 @@
 
 <!-- ANCHOR TABS -->
 <nav class="anchor-tabs" aria-label="Page sections">
-  <a href="#birth" class="anchor-tab">जन्म</a>
+  <a href="#overview" class="anchor-tab">परिचय</a>
   <a href="#founding" class="anchor-tab">संप्रदाय</a>
   <a href="#vachanamrut" class="anchor-tab">वचनामृत</a>
   <a href="#reform" class="anchor-tab">सेवा</a>
-  <a href="#legacy" class="anchor-tab">विरासत</a>
 </nav>
 
 <div class="content" id="main-content">
@@ -301,33 +383,25 @@
     🔊 हिंदी में सुनें
   </button>
 
-  <!-- SECTION A: Birth -->
-  <div id="birth" class="section-anchor">
+  <!-- SECTION A: Overview -->
+  <div id="overview" class="section-anchor">
     <div class="gold-divider"><span>✦</span></div>
-    <h2>दिव्य अवतरण</h2>
-    <p>भगवान स्वामिनारायण का अवतरण <strong style="color:var(--crimson);">3 अप्रैल 1781</strong> को हुआ। वे साक्षात् पुरुषोत्तम नारायण के अवतार हैं — यह उनके जीवन के हर क्षण से प्रमाणित होता है। उनका जन्म उत्तर प्रदेश के छोटे से ग्राम छपैया में हुआ — किंतु उनकी महिमा ने समस्त सृष्टि को आलोकित किया।</p>
+    <h2>दिव्य जीवन — एक दृष्टि</h2>
+    <p>भगवान स्वामिनारायण का अवतरण <strong style="color:var(--crimson);">3 अप्रैल 1781</strong> को छपैया ग्राम, उत्तर प्रदेश में हुआ। बचपन में <strong style="color:var(--crimson);">घनश्याम</strong>, तीर्थयात्रा में <strong style="color:var(--crimson);">नीलकंठ वर्णी</strong>, और गुजरात में <strong style="color:var(--crimson);">सहजानंद स्वामी</strong> — उनका जीवन तीन दिव्य अध्यायों में विभाजित है।</p>
 
-    <div class="facts-card" style="animation-delay:0.2s">
-      <div class="fact-row">
-        <span class="fact-icon">🌸</span>
-        <span class="fact-text"><strong>जन्म तिथि:</strong> 3 अप्रैल 1781, रामनवमी</span>
-      </div>
-      <div class="fact-row">
-        <span class="fact-icon">📍</span>
-        <span class="fact-text"><strong>जन्म स्थान:</strong> छपैया ग्राम, गोंडा जिला, उत्तर प्रदेश</span>
-      </div>
-      <div class="fact-row">
-        <span class="fact-icon">👨‍👩‍👦</span>
-        <span class="fact-text"><strong>माता-पिता:</strong> धर्मदेव (पिता) और भक्तिमाता (माता)</span>
-      </div>
-      <div class="fact-row">
-        <span class="fact-icon">✨</span>
-        <span class="fact-text"><strong>जन्म नाम:</strong> घनश्याम पांडे</span>
-      </div>
-      <div class="fact-row">
-        <span class="fact-icon">⭐</span>
-        <span class="fact-text"><strong>दिव्य संकेत:</strong> जन्म के समय संतों ने कहा — "यह पुण्य आत्मा संसार का उद्धार करेगी"</span>
-      </div>
+    <div class="journey-cards">
+      <a href="ghanshyam-charitra.html" class="journey-card">
+        <img src="images/ghanshyam.png" alt="घनश्याम">
+        <div class="journey-card-title">घनश्याम चरित्र</div>
+        <div class="journey-card-sub">Bal Swarup · बचपन</div>
+        <div class="journey-card-arrow">विस्तार से →</div>
+      </a>
+      <a href="nilkanth-charitra.html" class="journey-card">
+        <img src="images/nilkanth.png" alt="नीलकंठ">
+        <div class="journey-card-title">नीलकंठ चरित्र</div>
+        <div class="journey-card-sub">Kishor Avastha · तीर्थयात्रा</div>
+        <div class="journey-card-arrow">विस्तार से →</div>
+      </a>
     </div>
   </div>
 
@@ -351,12 +425,22 @@
         <span class="fact-text"><strong>1802:</strong> सत्संग के प्रमुख बने — स्वामिनारायण मंत्र की स्थापना</span>
       </div>
       <div class="fact-row">
-        <span class="fact-icon">🏛️</span>
-        <span class="fact-text"><strong>जीवनकाल में 6 मंदिर:</strong> अहमदाबाद, भुज, वड़ताल, मुली, धोलेरा, जूनागढ़</span>
+        <span class="fact-icon">🛕</span>
+        <div class="fact-text">
+          <strong>जीवनकाल में निर्मित 6 मंदिर:</strong>
+          <ul style="margin-top:6px;padding-left:4px;list-style:none;display:flex;flex-direction:column;gap:5px;">
+            <li>🔸 <strong>अहमदाबाद</strong> (1822)</li>
+            <li>🔸 <strong>वड़ताल</strong> (1824)</li>
+            <li>🔸 <strong>भुज</strong> (1823)</li>
+            <li>🔸 <strong>धोलेरा</strong> (1826)</li>
+            <li>🔸 <strong>गढ़डा</strong> (1828)</li>
+            <li>🔸 <strong>जूनागढ़</strong> (1828)</li>
+          </ul>
+        </div>
       </div>
       <div class="fact-row">
         <span class="fact-icon">🌺</span>
-        <span class="fact-text"><strong>महासमाधि:</strong> 1 जून 1830, गढ़डा — दिव्य लोकगमन</span>
+        <span class="fact-text"><strong>महासमाधि:</strong> 1 जून 1830, गढ़डा — अक्षरधाम गमन</span>
       </div>
     </div>
   </div>
@@ -374,6 +458,30 @@
       <div class="rotating-quote">"मन को वश में करना — यही सबसे बड़ी तपस्या है।"</div>
       <div class="quotes-spacer"></div>
     </div>
+
+    <!-- APP DOWNLOAD -->
+    <div class="app-card" style="margin-top: 30px;">
+      <div class="app-card-header">
+        <div class="app-card-icon">📖</div>
+        <div class="app-card-info">
+          <div class="app-card-title">Vachanamrut Study App</div>
+          <div class="app-card-sub">BAPS Swaminarayan Sanstha · Free</div>
+        </div>
+      </div>
+      <div class="app-card-desc">
+        भगवान स्वामिनारायण के 262 दिव्य वचन — हिंदी, गुजराती व अंग्रेजी में पढ़ें और मनन करें।
+      </div>
+      <div class="app-btn-row">
+        <a href="https://play.google.com/store/apps/details?id=org.baps.vachanamrut&hl=en_IN" target="_blank" class="app-btn app-btn-android">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.76a2 2 0 0 1-1.18-1.84V2.08A2 2 0 0 1 3.18.24l12.66 11.76-12.66 11.76z" fill="#EA4335"/><path d="M19.84 15.36l-3.02-1.74-3.38 3.14 3.38 3.14 3.06-1.76a1.6 1.6 0 0 0 0-2.78z" fill="#FBBC05"/><path d="M2 .24a1.6 1.6 0 0 1 1.76.24l13.06 12.1-3.38 3.14L2 .24z" fill="#4285F4"/><path d="M2 23.76l11.44-10.62 3.38 3.14L3.76 23.52A1.6 1.6 0 0 1 2 23.76z" fill="#34A853"/></svg>
+          Google Play
+        </a>
+        <a href="https://apps.apple.com/in/app/vachanamrut-study-app/id482931473" target="_blank" class="app-btn app-btn-ios">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- SECTION D: Reform -->
@@ -388,10 +496,6 @@
         <span class="reform-text"><strong>1813 सौराष्ट्र अकाल</strong> में विशाल राहत अभियान चलाया — हज़ारों लोगों को भोजन और आश्रय दिया</span>
       </li>
       <li>
-        <span class="reform-bullet">👩</span>
-        <span class="reform-text"><strong>महिलाओं के लिए</strong> अलग सत्संग सभा स्थापित की — भारत में पहली बार इतने बड़े पैमाने पर</span>
-      </li>
-      <li>
         <span class="reform-bullet">🚫</span>
         <span class="reform-text"><strong>पशु बलि, सती प्रथा और नशे</strong> पर कड़ा प्रतिबंध लगाया — समाज को कुरीतियों से मुक्त किया</span>
       </li>
@@ -402,33 +506,6 @@
     </ul>
   </div>
 
-  <!-- SECTION E: Legacy -->
-  <div id="legacy" class="section-anchor">
-    <div class="gold-divider"><span>✦</span></div>
-    <h2>विरासत — Legacy</h2>
-    <p>उनकी विरासत केवल इतिहास नहीं — वह आज भी जीवंत है, विश्व के कोने-कोने में।</p>
-
-    <div class="legacy-grid">
-      <div class="legacy-card">
-        <span class="legacy-icon">🏛️</span>
-        <div class="legacy-text">उनके जीवनकाल में <strong style="color:var(--crimson);">6 मंदिर</strong> निर्मित</div>
-      </div>
-      <div class="legacy-card">
-        <span class="legacy-icon">🌍</span>
-        <div class="legacy-text">आज <strong style="color:var(--crimson);">1,100+ BAPS मंदिर</strong> — 55+ देशों में</div>
-      </div>
-      <div class="legacy-card">
-        <span class="legacy-icon">🏆</span>
-        <div class="legacy-text">अक्षरधाम दिल्ली — <strong style="color:var(--crimson);">गिनीज़ वर्ल्ड रिकॉर्ड</strong></div>
-      </div>
-      <div class="legacy-card">
-        <span class="legacy-icon">🇮🇳</span>
-        <div class="legacy-text">अक्षरधाम जोधपुर — <strong style="color:var(--crimson);">सितंबर 2025</strong> मूर्ति प्रतिष्ठा</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="gold-divider"><span>✦</span></div>
 
 </div><!-- end content -->
 

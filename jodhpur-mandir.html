@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7VS23NEFRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7VS23NEFRR');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAPS अक्षरधाम मंदिर, जोधपुर | मूर्ति प्रतिष्ठा महोत्सव</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #7A4F25;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.4); }
+    50% { text-shadow: 0 0 22px rgba(200,155,20,0.9), 0 0 40px rgba(200,155,20,0.5); }
+  }
+  @keyframes floatParticle {
+    0%,100% { transform: translateY(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-20px) scale(1.3); opacity: 1; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes borderGlow {
+    0%,100% { border-color: var(--gold); box-shadow: 0 0 0 rgba(200,155,20,0); }
+    50% { border-color: var(--gold-lt); box-shadow: 0 0 12px rgba(200,155,20,0.4); }
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; transition: background 0.2s; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Cinzel', serif; font-weight: 700; font-size: 13px; color: white; letter-spacing: 0.08em; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #C47A05 0%, #8B1A1A 45%, #5C0A0A 100%);
+    padding: 76px 20px 36px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .mandala-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; height: 320px; opacity: 0.06; pointer-events: none;
+  }
+  .particle { position: absolute; width: 5px; height: 5px; background: var(--gold-lt); border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); opacity: 0.5; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(200,155,20,0.25);
+    border: 1px solid var(--gold-lt);
+    color: var(--gold-lt);
+    font-family: 'Cinzel', serif;
+    font-size: 12px; letter-spacing: 0.2em;
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.4s ease both;
+  }
+  .hero-icon {
+    font-size: 52px; display: block;
+    margin: 0 auto 10px;
+    position: relative; z-index: 1;
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  .hero-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 30px;
+    color: #FFF5CC; line-height: 1.3;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease 0.1s both;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 12px; color: var(--gold-lt);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-top: 8px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-dates {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(232,190,48,0.4);
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin-top: 14px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease 0.3s both;
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: var(--gold-lt); letter-spacing: 0.1em;
+  }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 18px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  .section-heading {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 20px;
+    color: var(--crimson);
+    margin: 20px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-heading-en {
+    font-family: 'Cinzel', serif;
+    font-size: 12px; color: var(--text-light);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 14px; margin-top: -8px;
+  }
+
+  p { font-size: 15px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* EVENT BANNER */
+  .event-banner {
+    background: linear-gradient(135deg, #C47A05 0%, #8B1A1A 60%, #5C0A0A 100%);
+    border-radius: 16px;
+    padding: 22px 18px;
+    margin: 20px 0;
+    color: var(--gold-pale);
+    position: relative; overflow: hidden;
+    animation: fadeUp 0.5s ease 0.1s both;
+  }
+  .event-banner::before {
+    content: '🛕';
+    position: absolute; right: -10px; top: -10px;
+    font-size: 80px; opacity: 0.08;
+    pointer-events: none;
+  }
+  .event-banner-tag {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold-lt);
+    background: rgba(200,155,20,0.2);
+    border: 1px solid rgba(232,190,48,0.4);
+    display: inline-block; padding: 4px 10px; border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .event-banner-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 900; font-size: 22px;
+    color: var(--gold-lt); line-height: 1.3;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .event-banner-date {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: rgba(255,245,204,0.9); letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .event-banner-desc { font-size: 14px; color: rgba(255,245,204,0.85); line-height: 1.7; }
+
+  /* QUOTE CARD */
+  .quote-card {
+    background: linear-gradient(135deg, var(--maroon), #3A0808);
+    border-radius: 16px; padding: 22px 18px;
+    margin: 16px 0;
+    border-left: 4px solid var(--gold);
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .quote-text {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 16px; color: var(--gold-pale);
+    line-height: 1.9; font-style: italic;
+    margin-bottom: 12px;
+  }
+  .quote-author {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: var(--gold-lt); letter-spacing: 0.12em;
+    text-align: right;
+  }
+
+  /* DEITY CARDS */
+  .deity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .deity-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 14px;
+    padding: 14px 12px;
+    text-align: center;
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .deity-card:active { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139,26,26,0.15); }
+  .deity-card.featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #FFF5CC, #FDF0AA);
+    border-color: var(--saffron);
+    border-width: 2px;
+    animation: borderGlow 3s ease-in-out infinite;
+  }
+  .deity-icon { font-size: 28px; margin-bottom: 6px; display: block; }
+  .deity-name {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 14px;
+    color: var(--crimson); line-height: 1.3;
+  }
+  .deity-shrine {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: var(--text-light); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-top: 4px;
+  }
+
+  /* GALLERY GRID */
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .gallery-card {
+    display: block; text-decoration: none;
+    background: linear-gradient(135deg, var(--crimson), var(--maroon));
+    border-radius: 14px; padding: 16px 14px;
+    position: relative; overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(200,155,20,0.3);
+  }
+  .gallery-card:active { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+  .gallery-card::after {
+    content: '→';
+    position: absolute; bottom: 10px; right: 12px;
+    color: rgba(255,245,204,0.5); font-size: 14px;
+  }
+  .gallery-card-icon { font-size: 24px; margin-bottom: 8px; display: block; }
+  .gallery-card-name {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 13px;
+    color: var(--gold-pale); line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .gallery-card-count {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: rgba(255,245,204,0.6); letter-spacing: 0.08em;
+  }
+  .gallery-card.highlight-gallery {
+    background: linear-gradient(135deg, #C47A05, #8B1A1A);
+    grid-column: 1 / -1;
+  }
+  .gallery-card:nth-child(1) { animation-delay: 0.05s; }
+  .gallery-card:nth-child(2) { animation-delay: 0.1s; }
+  .gallery-card:nth-child(3) { animation-delay: 0.15s; }
+  .gallery-card:nth-child(4) { animation-delay: 0.2s; }
+  .gallery-card:nth-child(5) { animation-delay: 0.25s; }
+  .gallery-card:nth-child(6) { animation-delay: 0.3s; }
+
+  /* VIDEO CARDS */
+  .video-card {
+    display: flex; align-items: center; gap: 14px;
+    background: linear-gradient(135deg, #1A1A2E, #16213E, #0F3460);
+    border-radius: 14px; padding: 16px;
+    margin: 10px 0; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s;
+  }
+  .video-card:active { transform: translateY(-2px); }
+  .video-play {
+    width: 46px; height: 46px; flex-shrink: 0;
+    background: #FF0000; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .video-info { flex: 1; }
+  .video-title { font-family: 'Noto Serif Devanagari', serif; font-size: 14px; font-weight: 700; color: white; line-height: 1.4; margin-bottom: 4px; }
+  .video-duration { font-family: 'Cinzel', serif; font-size: 12px; color: rgba(255,255,255,0.5); }
+  .video-arrow { color: rgba(255,255,255,0.4); font-size: 16px; }
+
+  /* EVENT PROGRAM TIMELINE */
+  .timeline { margin: 12px 0; }
+  .timeline-item {
+    display: flex; gap: 14px;
+    margin-bottom: 14px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .timeline-item:nth-child(1) { animation-delay: 0.05s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.15s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.2s; }
+  .timeline-item:nth-child(5) { animation-delay: 0.25s; }
+  .timeline-item:nth-child(6) { animation-delay: 0.3s; }
+  .timeline-item:nth-child(7) { animation-delay: 0.35s; }
+  .timeline-item:nth-child(8) { animation-delay: 0.4s; }
+  .timeline-left { display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--saffron), var(--crimson));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(212,80,10,0.3);
+  }
+  .timeline-line { width: 2px; flex: 1; background: linear-gradient(to bottom, var(--gold), transparent); margin-top: 4px; min-height: 12px; }
+  .timeline-item:last-child .timeline-line { display: none; }
+  .timeline-body { flex: 1; padding-bottom: 4px; }
+  .timeline-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 15px; color: var(--text-dark); margin-bottom: 3px; }
+  .timeline-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+  /* INFO CARD */
+  .info-card {
+    background: var(--cream-dk);
+    border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px;
+    margin: 12px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+  .info-card-title {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700; font-size: 16px;
+    color: var(--crimson); margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(200,155,20,0.3);
+  }
+  .info-row { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(200,155,20,0.18); }
+  .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .info-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .info-label { font-family: 'Cinzel', serif; font-size: 12px; color: var(--text-light); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px; }
+  .info-value { font-size: 14px; color: var(--text-dark); line-height: 1.6; }
+  .info-value strong { color: var(--crimson); }
+
+  /* TIMING CARD */
+  .timing-card {
+    background: linear-gradient(135deg, #FFF9E0, var(--gold-pale));
+    border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px;
+    margin: 12px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+  .timing-card-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 16px; color: var(--crimson); margin-bottom: 12px; }
+  .timing-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(200,155,20,0.25); font-size: 14px; }
+  .timing-row:last-child { border-bottom: none; }
+  .timing-name { color: var(--text-mid); font-weight: 600; }
+  .timing-time { color: var(--saffron); font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; }
+
+  /* RULES CARD */
+  .rules-card { background: var(--cream-dk); border: 1.5px solid var(--gold); border-radius: 14px; padding: 16px; margin: 12px 0; animation: fadeUp 0.5s ease both; }
+  .rules-card-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 16px; color: var(--crimson); margin-bottom: 12px; }
+  .rule-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(200,155,20,0.18); font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .rule-item:last-child { border-bottom: none; }
+  .rule-icon { flex-shrink: 0; font-size: 17px; }
+
+  /* BUTTONS */
+  .btn-row { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 20px; border-radius: 12px;
+    text-decoration: none; min-height: 52px;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 15px; font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn:active { transform: translateY(-2px); }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--saffron), var(--saffron-lt));
+    color: white;
+    box-shadow: 0 4px 14px rgba(212,80,10,0.35);
+  }
+  .btn-map {
+    background: linear-gradient(90deg, #1A73E8, #1557C0);
+    color: white;
+    box-shadow: 0 4px 14px rgba(26,115,232,0.35);
+  }
+  .btn-dark {
+    background: linear-gradient(90deg, var(--maroon), var(--crimson));
+    color: var(--gold-pale);
+    box-shadow: 0 4px 14px rgba(92,10,10,0.35);
+  }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px; background: var(--cream-dk);
+    border: 1.5px solid var(--gold); border-radius: 8px;
+    min-height: 44px; display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">JODHPUR MANDIR</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#E8BE30" stroke-width="1"/>
+    <circle cx="150" cy="150" r="100" stroke="#E8BE30" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="60" stroke="#E8BE30" stroke-width="0.9"/>
+    <g stroke="#E8BE30" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/><line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/><line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+  </svg>
+  <div class="particle" style="left:10%;top:25%;--dur:3.5s;--delay:0s;"></div>
+  <div class="particle" style="left:80%;top:40%;--dur:4.2s;--delay:0.6s;"></div>
+  <div class="particle" style="left:55%;top:70%;--dur:3.8s;--delay:1.1s;"></div>
+  <div class="particle" style="left:25%;top:65%;--dur:4.5s;--delay:0.3s;"></div>
+
+  <span class="hero-icon">🛕</span>
+  <div class="hero-title">BAPS अक्षरधाम मंदिर</div>
+  <div class="hero-subtitle">Shri Swaminarayan Mandir · Jodhpur</div>
+  <div class="hero-dates">📅 मूर्ति प्रतिष्ठा — सितंबर 22–25, 2025</div>
+</div>
+
+<div class="content">
+
+  <!-- EVENT HIGHLIGHT -->
+  <div style="padding-top: 20px;">
+    <div class="event-banner">
+      <div class="event-banner-tag">✦ ऐतिहासिक अवसर</div>
+      <div class="event-banner-title">मूर्ति प्रतिष्ठा महोत्सव</div>
+      <div class="event-banner-date">📅 22 – 25 सितंबर 2025 · जोधपुर, राजस्थान</div>
+      <div class="event-banner-desc">
+        परम पूज्य महंत स्वामी महाराज के पावन सान्निध्य में इस दिव्य मंदिर में भगवान की मूर्तियों की प्राण-प्रतिष्ठा हुई — एक ऐसा ऐतिहासिक पल जो राजस्थान के आध्यात्मिक इतिहास में सदा के लिए अंकित हो गया।
+      </div>
+    </div>
+  </div>
+
+  <!-- MAHANT SWAMI QUOTE -->
+  <div class="quote-card">
+    <div class="quote-text">
+      "यह मंदिर अब सभी भक्तों और श्रद्धालुओं के लिए खुला है... भगवान यहाँ अपने दिव्य स्वरूप में विराजमान हैं।"
+    </div>
+    <div class="quote-author">— परम पूज्य महंत स्वामी महाराज</div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+ 
+  <!-- PHOTO GALLERIES -->
+  <div class="section-heading">📸 फोटो गैलरी</div>
+  <div class="section-heading-en">Photo Galleries · baps.org</div>
+
+  <div class="gallery-grid">
+    <a href="https://www.baps.org/Photos/2025/Murti-Pratishtha-34270.aspx?mid=287626" target="_blank" class="gallery-card highlight-gallery">
+      <span class="gallery-card-icon">🛕</span>
+      <div class="gallery-card-name">मूर्ति प्रतिष्ठा</div>
+      <div class="gallery-card-count">124 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Mandir-Mood-34272.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🌅</span>
+      <div class="gallery-card-name">मंदिर मूड्स</div>
+      <div class="gallery-card-count">30 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Nagar-Yatra-34247.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🥁</span>
+      <div class="gallery-card-name">नगर यात्रा</div>
+      <div class="gallery-card-count">45 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Shri-Swaminarayan-Vishwashanti-Mahayaag-Day-1-34206.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🔥</span>
+      <div class="gallery-card-name">महायज्ञ — दिन १</div>
+      <div class="gallery-card-count">96 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Shri-Swaminarayan-Vishwashanti-Mahayaag-Day-2-34246.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🔥</span>
+      <div class="gallery-card-name">महायज्ञ — दिन २</div>
+      <div class="gallery-card-count">62 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Murti-Pratishtha-Assembly-34268.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🙏</span>
+      <div class="gallery-card-name">प्रतिष्ठा सभा</div>
+      <div class="gallery-card-count">54 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Sant-Sammelan-34329.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🧘</span>
+      <div class="gallery-card-name">संत सम्मेलन</div>
+      <div class="gallery-card-count">45 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Cultural-Program-34207.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🎭</span>
+      <div class="gallery-card-name">सांस्कृतिक कार्यक्रम</div>
+      <div class="gallery-card-count">21 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Fireworks-34249.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🎆</span>
+      <div class="gallery-card-name">आतिशबाजी</div>
+      <div class="gallery-card-count">15 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Murtis-34271.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">✨</span>
+      <div class="gallery-card-name">मूर्तियाँ</div>
+      <div class="gallery-card-count">12 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Mahila-Din-34293.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🌸</span>
+      <div class="gallery-card-name">महिला दिन</div>
+      <div class="gallery-card-count">15 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Nyaas-Vidhi-34208.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🪔</span>
+      <div class="gallery-card-name">न्यास विधि</div>
+      <div class="gallery-card-count">6 Photos</div>
+    </a>
+    <a href="https://www.baps.org/Photos/2025/Vastu-Pujan-34182.aspx?mid=287626" target="_blank" class="gallery-card">
+      <span class="gallery-card-icon">🪔</span>
+      <div class="gallery-card-name">वास्तु पूजन</div>
+      <div class="gallery-card-count">20 Photos</div>
+    </a>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- VIDEOS -->
+  <div class="section-heading">🎬 वीडियो गैलरी</div>
+  <div class="section-heading-en">Video Gallery · baps.org</div>
+
+  <a href="https://www.baps.org/News/2025/Murti-Pratishtha-Mahotsav-BAPS-Shri-Swaminarayan-Mandir-29434.aspx" target="_blank" class="video-card">
+    <div class="video-play">▶</div>
+    <div class="video-info">
+      <div class="video-title">जोधपुर मंदिर मूर्ति प्रतिष्ठा महोत्सव (Live)</div>
+      <div class="video-duration">⏱ 1:57:06 · Full Ceremony</div>
+    </div>
+    <div class="video-arrow">→</div>
+  </a>
+  <a href="https://www.baps.org/News/2025/Murti-Pratishtha-Mahotsav-BAPS-Shri-Swaminarayan-Mandir-29434.aspx" target="_blank" class="video-card">
+    <div class="video-play">▶</div>
+    <div class="video-info">
+      <div class="video-title">मूर्ति प्रतिष्ठा</div>
+      <div class="video-duration">⏱ 18:45 · Highlights</div>
+    </div>
+    <div class="video-arrow">→</div>
+  </a>
+  <a href="https://www.baps.org/News/2025/Murti-Pratishtha-Mahotsav-BAPS-Shri-Swaminarayan-Mandir-29434.aspx" target="_blank" class="video-card">
+    <div class="video-play">▶</div>
+    <div class="video-info">
+      <div class="video-title">यज्ञ — नगर यात्रा</div>
+      <div class="video-duration">⏱ 15:06 · Nagar Yatra</div>
+    </div>
+    <div class="video-arrow">→</div>
+  </a>
+  <a href="https://www.baps.org/News/2025/Murti-Pratishtha-Mahotsav-BAPS-Shri-Swaminarayan-Mandir-29434.aspx" target="_blank" class="video-card">
+    <div class="video-play">▶</div>
+    <div class="video-info">
+      <div class="video-title">महोत्सव — पूर्ण प्रसारण</div>
+      <div class="video-duration">⏱ 1:35:51 · Full Event</div>
+    </div>
+    <div class="video-arrow">→</div>
+  </a>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- VISIT INFO -->
+  <div class="section-heading">📍 मंदिर दर्शन</div>
+  <div class="section-heading-en">Visit Information</div>
+
+  <div class="info-card">
+    <div class="info-card-title">🛕 BAPS अक्षरधाम मंदिर, जोधपुर</div>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">पता · Address</div>
+        <div class="info-value">Mangalnath Road, Kali Beri, Sursagar<br>Jodhpur, Rajasthan — 342024</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🎟️</div>
+      <div>
+        <div class="info-label">प्रवेश · Entry</div>
+        <div class="info-value"><strong>निःशुल्क</strong> — सभी के लिए खुला</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">👟</div>
+      <div>
+        <div class="info-label">जूते-चप्पल · Footwear</div>
+        <div class="info-value">परिसर में वर्जित — जूता-घर प्रवेश द्वार पर उपलब्ध</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timing-card">
+    <div class="timing-card-title">🕐 दर्शन समय · Darshan Timings</div>
+    <div class="timing-row"><span class="timing-name">मंगला आरती</span><span class="timing-time">6:00 AM</span></div>
+    <div class="timing-row"><span class="timing-name">सुबह दर्शन</span><span class="timing-time">7:00 – 11:30 AM</span></div>
+    <div class="timing-row"><span class="timing-name">दोपहर बंद</span><span class="timing-time">11:30 AM – 4:00 PM</span></div>
+    <div class="timing-row"><span class="timing-name">शाम दर्शन</span><span class="timing-time">4:00 – 8:00 PM</span></div>
+    <div class="timing-row"><span class="timing-name">संध्या आरती</span><span class="timing-time">7:00 PM</span></div>
+  </div>
+
+  <div class="rules-card">
+    <div class="rules-card-title">🙏 मंदिर शिष्टाचार</div>
+    <div class="rule-item"><span class="rule-icon">👗</span><span>शालीन वस्त्र पहनें</span></div>
+    <div class="rule-item"><span class="rule-icon">🔇</span><span>परिसर में शांति बनाए रखें</span></div>
+    <div class="rule-item"><span class="rule-icon">🚭</span><span>धूम्रपान व मादक पदार्थ वर्जित</span></div>
+    <div class="rule-item"><span class="rule-icon">📱</span><span>मोबाइल साइलेंट रखें</span></div>
+  </div>
+
+  <div class="btn-row">
+    <a href="https://maps.google.com/?q=BAPS+Swaminarayan+Mandir+Jodhpur" target="_blank" class="btn btn-map">🗺️ Google Maps पर देखें</a>
+    <a href="https://www.baps.org/Global-Network/India/Jodhpur/Visit.aspx" target="_blank" class="btn btn-primary">🌐 baps.org</a>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>
