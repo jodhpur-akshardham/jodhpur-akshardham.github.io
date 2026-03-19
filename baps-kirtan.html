@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7VS23NEFRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7VS23NEFRR');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAPS कीर्तन व आरती | BAPS अक्षरधाम, जोधपुर</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:    #D4500A;
+    --saffron-lt: #E8601A;
+    --gold:       #C89B14;
+    --gold-lt:    #E8BE30;
+    --gold-pale:  #FFF5CC;
+    --crimson:    #8B1A1A;
+    --maroon:     #5C0A0A;
+    --cream:      #FDF6E3;
+    --cream-dk:   #F5E9C8;
+    --text-dark:  #2A1506;
+    --text-mid:   #5C3010;
+    --text-light: #7A4F25;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif Devanagari', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    padding-bottom: 80px;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulseGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(200,155,20,0.4); }
+    50% { text-shadow: 0 0 20px rgba(200,155,20,0.9), 0 0 40px rgba(200,155,20,0.5); }
+  }
+  @keyframes floatParticle {
+    0%,100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-18px); opacity: 0.9; }
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: linear-gradient(90deg, var(--saffron), var(--crimson));
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .top-bar a { color: white; text-decoration: none; font-size: 22px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+  .top-bar a:active { background: rgba(255,255,255,0.2); }
+  .top-bar-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 14px; color: white; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #6B2FA0 0%, #8B1A1A 50%, #4A0A0A 100%);
+    padding: 76px 20px 34px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .mandala-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 280px; height: 280px; opacity: 0.07; pointer-events: none; }
+  .particle { position: absolute; width: 4px; height: 4px; background: var(--gold-lt); border-radius: 50%; animation: floatParticle var(--dur,4s) ease-in-out infinite; animation-delay: var(--delay,0s); }
+  .hero-icon { font-size: 52px; display: block; margin: 0 auto 10px; position: relative; z-index: 1; animation: pulseGlow 3s ease-in-out infinite; }
+  .hero-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 28px; color: #FFF5CC; line-height: 1.3; position: relative; z-index: 1; animation: fadeUp 0.5s ease 0.1s both; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  .hero-subtitle { font-family: 'Tiro Devanagari Hindi', serif; font-style: italic; font-size: 16px; color: var(--gold-lt); margin-top: 8px; position: relative; z-index: 1; animation: fadeUp 0.5s ease 0.2s both; }
+
+  /* CONTENT */
+  .content { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+  .gold-divider { display: flex; align-items: center; gap: 10px; margin: 18px 0; }
+  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .gold-divider span { color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+  h2 { font-family: 'Noto Serif Devanagari', serif; font-weight: 900; font-size: 20px; color: var(--crimson); margin-bottom: 6px; }
+  p { font-size: 15px; line-height: 1.9; color: var(--text-mid); margin-bottom: 12px; }
+
+  /* VIDEO EMBED */
+  .video-label {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: var(--text-light); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .video-wrap {
+    position: relative; width: 100%; padding-top: 56.25%;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    margin: 8px 0 16px;
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .video-wrap iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+  }
+  .video-caption {
+    font-family: 'Tiro Devanagari Hindi', serif; font-style: italic;
+    font-size: 14px; color: var(--text-light); text-align: center;
+    margin-top: -8px; margin-bottom: 16px;
+  }
+
+  /* CHANNEL CARD */
+  .channel-card {
+    border-radius: 16px; padding: 20px 16px;
+    margin: 12px 0;
+    animation: fadeUp 0.5s ease both;
+    transition: transform 0.2s;
+  }
+  .channel-card:active { transform: translateY(-2px); }
+  .channel-card.yt-red { background: linear-gradient(135deg, #1A0505, #2D0A0A); border: 1.5px solid rgba(255,80,80,0.3); }
+  .channel-card.yt-saffron { background: linear-gradient(135deg, var(--maroon), #3A0808); border: 1.5px solid rgba(200,155,20,0.3); }
+  .channel-top { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .channel-yt-icon {
+    width: 46px; height: 46px; background: #FF0000; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(255,0,0,0.4);
+  }
+  .channel-name { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 16px; color: var(--gold-pale); line-height: 1.3; }
+  .channel-handle { font-family: 'Cinzel', serif; font-size: 12px; color: rgba(255,245,204,0.6); letter-spacing: 0.06em; margin-top: 2px; }
+  .channel-desc { font-size: 14px; color: rgba(255,245,204,0.8); line-height: 1.7; margin-bottom: 14px; }
+  .channel-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: #FF0000; color: white; text-decoration: none;
+    font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.08em; padding: 12px 18px; border-radius: 10px;
+    min-height: 46px; transition: opacity 0.2s;
+  }
+  .channel-btn:active { opacity: 0.85; }
+
+  /* HOW TO GUIDE */
+  .guide-card {
+    background: var(--cream-dk); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 18px 16px; margin: 12px 0;
+    animation: fadeUp 0.5s ease both;
+  }
+  .guide-title { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; font-size: 17px; color: var(--crimson); margin-bottom: 14px; }
+  .guide-step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+  .guide-step:last-child { margin-bottom: 0; }
+  .step-badge {
+    width: 32px; height: 32px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--saffron), var(--crimson));
+    border-radius: 50%; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cinzel', serif; font-weight: 700; font-size: 14px;
+    box-shadow: 0 2px 8px rgba(212,80,10,0.3);
+  }
+  .step-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; padding-top: 4px; }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--cream); border-top: 1.5px solid var(--gold);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; justify-content: center; z-index: 100;
+    box-shadow: 0 -2px 10px rgba(139,26,26,0.1);
+  }
+  .bottom-nav a {
+    font-family: 'Noto Serif Devanagari', serif; font-size: 15px; font-weight: 600;
+    color: var(--crimson); text-decoration: none;
+    padding: 10px 28px; background: var(--cream-dk);
+    border: 1.5px solid var(--gold); border-radius: 8px;
+    min-height: 44px; display: flex; align-items: center; gap: 6px;
+  }
+  .bottom-nav a:active { background: #EBD89A; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="index.html" aria-label="वापस जाएं">←</a>
+  <span class="top-bar-title">कीर्तन व आरती</span>
+  <a href="index.html" aria-label="होम">🏠</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="mandala-bg" viewBox="0 0 300 300" fill="none">
+    <circle cx="150" cy="150" r="140" stroke="#E8BE30" stroke-width="1"/>
+    <circle cx="150" cy="150" r="100" stroke="#E8BE30" stroke-width="0.7"/>
+    <circle cx="150" cy="150" r="60" stroke="#E8BE30" stroke-width="0.9"/>
+    <g stroke="#E8BE30" stroke-width="0.6">
+      <line x1="150" y1="10" x2="150" y2="290"/>
+      <line x1="10" y1="150" x2="290" y2="150"/>
+      <line x1="50" y1="50" x2="250" y2="250"/>
+      <line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+  </svg>
+  <div class="particle" style="left:10%;top:20%;--dur:4s;--delay:0s;"></div>
+  <div class="particle" style="left:82%;top:35%;--dur:5s;--delay:0.6s;"></div>
+  <div class="particle" style="left:50%;top:72%;--dur:3.6s;--delay:1s;"></div>
+
+  <span class="hero-icon">🎵</span>
+  <div class="hero-title">BAPS कीर्तन व आरती</div>
+  <div class="hero-subtitle">घर में भी मंदिर जैसा वातावरण बनाएं</div>
+</div>
+
+<div class="content">
+
+  <!-- SECTION 1: FEATURED VIDEO -->
+  <div style="padding-top:20px;">
+    <h2>🪔 श्री स्वामिनारायण प्रातः आरती</h2>
+    <div class="video-label">निदिध्यासन एवं अष्टक के साथ</div>
+    <a href="https://www.youtube.com/watch?v=2G4N42dOQu0" target="_blank"
+       style="display:block; position:relative; border-radius:14px; overflow:hidden; text-decoration:none; box-shadow:0 6px 24px rgba(0,0,0,0.25); margin:10px 0 6px; animation: fadeUp 0.5s ease 0.2s both;">
+      <img src="https://img.youtube.com/vi/2G4N42dOQu0/maxresdefault.jpg"
+           alt="श्री स्वामिनारायण प्रातः आरती"
+           onerror="this.src='https://img.youtube.com/vi/2G4N42dOQu0/hqdefault.jpg'"
+           style="width:100%; display:block; aspect-ratio:16/9; object-fit:cover;">
+      <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);"></div>
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-60%);
+                  width:58px; height:58px; background:#FF0000; border-radius:50%;
+                  display:flex; align-items:center; justify-content:center;
+                  box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+        <span style="font-size:24px; margin-left:4px; color:white;">▶</span>
+      </div>
+      <div style="position:absolute; bottom:0; left:0; right:0; padding:12px 16px;">
+        <div style="font-family:'Noto Serif Devanagari',serif; font-weight:700; font-size:15px; color:white; margin-bottom:2px; text-shadow:0 1px 4px rgba(0,0,0,0.8);">श्री स्वामिनारायण प्रातः आरती</div>
+        <div style="font-family:'Cinzel',serif; font-size:12px; color:rgba(255,255,255,0.75); letter-spacing:0.06em;">YouTube पर देखें</div>
+      </div>
+    </a>
+    <div class="video-caption" style="margin-top:10px;">प्रतिदिन प्रातःकाल इस आरती के साथ दिन का शुभारंभ करें</div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- SECTION 2: BAPS KIRTAN CHANNEL -->
+  <h2>📺 YouTube चैनल</h2>
+  <p style="font-size:14px; color:var(--text-light); margin-bottom:14px; font-family:'Cinzel',serif; letter-spacing:0.05em;">Subscribe करें — बिल्कुल मुफ्त</p>
+
+  <div class="channel-card yt-red" style="animation-delay:0.1s;">
+    <div class="channel-top">
+      <div class="channel-yt-icon">▶</div>
+      <div>
+        <div class="channel-name">BAPS Kirtan Channel</div>
+        <div class="channel-handle">@BAPSKirtanChannel</div>
+      </div>
+    </div>
+    <div class="channel-desc">भजन, कीर्तन, आरती और ध्यान के वीडियो — हर पल भक्ति का संगम</div>
+    <a href="https://www.youtube.com/@BAPSKirtanChannel" target="_blank" class="channel-btn">
+      ▶ YouTube पर Subscribe करें
+    </a>
+  </div>
+
+  <!-- SECTION 3: BAPS HINDI SATSANG CHANNEL -->
+  <div class="channel-card yt-saffron" style="animation-delay:0.2s;">
+    <div class="channel-top">
+      <div class="channel-yt-icon">▶</div>
+      <div>
+        <div class="channel-name">BAPS Satsang (Hindi)</div>
+        <div class="channel-handle">@BAPSSatsang_HIN</div>
+      </div>
+    </div>
+    <div class="channel-desc">हिंदी कथा प्रवचन — संतों के प्रवचन सुनें कभी भी, कहीं भी</div>
+    <a href="https://www.youtube.com/@BAPSSatsang_HIN" target="_blank" class="channel-btn">
+      ▶ YouTube पर Subscribe करें
+    </a>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <div class="channel-card" style="background:linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D); border:none; animation-delay:0.3s;">
+    <div class="channel-top">
+      <div class="channel-yt-icon" style="background:linear-gradient(135deg, #F77737, #E1306C, #833AB4); box-shadow:0 3px 10px rgba(193,53,132,0.4);">📸</div>
+      <div>
+        <div class="channel-name">BAPS Instagram</div>
+        <div class="channel-handle">@baps</div>
+      </div>
+    </div>
+    <div class="channel-desc">भक्ति, सेवा और आध्यात्मिकता की झलकियाँ — Instagram पर BAPS को Follow करें</div>
+    <a href="https://www.instagram.com/baps/" target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:8px; background:white; color:#C13584; text-decoration:none; font-family:'Cinzel',serif; font-size:13px; font-weight:700; letter-spacing:0.08em; padding:12px 18px; border-radius:10px; min-height:46px;">
+      📸 Instagram पर Follow करें
+    </a>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+  <!-- AKSHAR AMRUTAM APP -->
+  <div style="background:linear-gradient(135deg, var(--maroon), #3A0808); border:1.5px solid rgba(200,155,20,0.4); border-radius:18px; overflow:hidden; animation: fadeUp 0.5s ease 0.1s both; box-shadow:0 8px 28px rgba(0,0,0,0.25);">
+
+    <!-- Top accent bar -->
+    <div style="height:4px; background:linear-gradient(90deg, var(--saffron), var(--gold-lt), var(--saffron));"></div>
+
+    <div style="padding:20px 18px;">
+      <!-- App icon + name row -->
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
+        <div style="width:64px; height:64px; background:linear-gradient(135deg, #E8601A, #8B1A1A); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:32px; flex-shrink:0; box-shadow:0 4px 14px rgba(212,80,10,0.5);"><span style="filter:grayscale(1) brightness(10);">🎵</span></div>
+        <div style="flex:1;">
+          <div style="font-family:'Cinzel',serif; font-weight:700; font-size:18px; color:var(--gold-pale); letter-spacing:0.02em;">Akshar Amrutam</div>
+          <div style="font-family:'Cinzel',serif; font-size:12px; color:rgba(255,245,204,0.55); letter-spacing:0.1em; margin-top:3px; text-transform:uppercase;">BAPS Kirtan App</div>
+          <!-- Star rating -->
+          <div style="margin-top:6px; font-size:13px; color:var(--gold-lt); letter-spacing:2px;">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px; background:linear-gradient(90deg, transparent, rgba(200,155,20,0.4), transparent); margin-bottom:14px;"></div>
+
+      <!-- Feature tags -->
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+        <span style="background:rgba(200,155,20,0.15); border:1px solid rgba(200,155,20,0.35); color:var(--gold-lt); font-family:'Cinzel',serif; font-size:11px; padding:4px 10px; border-radius:20px;">🎶 भजन</span>
+        <span style="background:rgba(200,155,20,0.15); border:1px solid rgba(200,155,20,0.35); color:var(--gold-lt); font-family:'Cinzel',serif; font-size:11px; padding:4px 10px; border-radius:20px;">📖 Lyrics</span>
+        <span style="background:rgba(200,155,20,0.15); border:1px solid rgba(200,155,20,0.35); color:var(--gold-lt); font-family:'Cinzel',serif; font-size:11px; padding:4px 10px; border-radius:20px;">🔊 Audio</span>
+        <span style="background:rgba(200,155,20,0.15); border:1px solid rgba(200,155,20,0.35); color:var(--gold-lt); font-family:'Cinzel',serif; font-size:11px; padding:4px 10px; border-radius:20px;">🌐 Hindi · Gujarati</span>
+      </div>
+
+      <div style="font-size:14px; color:rgba(255,245,204,0.8); line-height:1.75; margin-bottom:18px;">हजारों भजन, कीर्तन, आरती — हिंदी, गुजराती व अन्य भाषाओं में। कभी भी, कहीं भी।</div>
+
+      <!-- Store badges side by side -->
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=org.baps.akshar_amrutam&hl=en_IN" target="_blank" style="display:block; text-decoration:none; flex:1; min-width:130px;">
+          <img src="images/google-play-badge.png" alt="Get it on Google Play" style="height:48px; width:100%; object-fit:cover; object-position:left;">
+        </a>
+        <a href="https://apps.apple.com/in/app/akshar-amrutam/id1480522819" target="_blank" style="display:block; text-decoration:none; flex:1; min-width:130px;">
+          <img src="images/app-store-badge.svg" alt="Download on the App Store" style="height:48px; width:100%; object-fit:contain; object-position:left;">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-divider"><span>✦</span></div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="index.html">🏠 मुख्य मेनू</a>
+</div>
+
+</body>
+</html>
