@@ -372,6 +372,38 @@
   .nav-card:nth-child(5) { animation-delay: 0.5s; }
   .nav-card:nth-child(6) { animation-delay: 0.6s; }
   .nav-card:nth-child(7) { animation-delay: 0.7s; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dk) 100%);
+    border-top: 2px solid var(--gold);
+    padding: 1rem 1.2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+.footer-disclaimer-simple {
+    font-size: 0.68rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin: 0.8rem 0 1.2rem;
+    font-style: italic;
+  }
+  .footer-disclaimer-simple a {
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold);
+  }
+  .footer-disclaimer-simple a:hover { color: var(--saffron); }
+  .footer-jai {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+    text-shadow: 0 1px 4px rgba(200,155,20,0.3);
+  }
+
 </style>
 </head>
 <body>
@@ -530,12 +562,19 @@
 
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-logo"></div>
-  <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-top:4px;">Presented by BAPS Akshardam, Jodhpur.</div>
-  <a href="https://www.baps.org/Global-Network/India/Jodhpur/Visit.aspx" target="_blank" class="footer-link">baps.org</a>
-  <div class="footer-jai" style="margin-top:12px;">जय स्वामिनारायण 🙏</div>
-</footer>
 
+
+<footer>
+  <div class="gold-divider"><span>✦</span></div>
+  <p class="footer-disclaimer-simple">
+    © BAPS Shri Swaminarayan Mandir, Jodhpur · इस वेबसाइट की समस्त सामग्री — वीडियो, चित्र एवं जानकारी — BAPS Swaminarayan Sanstha की संपत्ति है।
+    यह केवल BAPS अक्षरधाम मंदिर, जोधपुर के आगंतुकों की आध्यात्मिक जागरूकता हेतु प्रस्तुत की गई है।
+    No copyright infringement is intended. ·
+    <a href="https://www.baps.org" target="_blank" rel="noopener">baps.org</a> ·
+    <a href="https://pramukhswami.org" target="_blank" rel="noopener">pramukhswami.org</a> ·
+    <a href="https://www.bapscharities.org" target="_blank" rel="noopener">bapscharities.org</a>
+  </p>
+  <p class="footer-jai">॥ जय स्वामिनारायण ॥</p>
+</footer>
 </body>
 </html>
